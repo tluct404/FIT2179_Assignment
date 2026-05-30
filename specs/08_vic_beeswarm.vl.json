@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Beeswarm / jittered strip plot: every one of Victoria's 79 councils is a single dot placed by its facilities per 1,000 people, with a small random vertical jitter to stop dots overlapping. Each dot is sized by population, which reveals the twist: the councils with the highest per-person access are the smallest by population. The three rural leaders are labelled. Sources: Victorian sport facilities dataset + ABS population.",
+  "width": "container",
+  "height": 360,
+  "data": { "url": "data/vic_lga.json" },
+  "config": {
+    "font": "Inter, sans-serif",
+    "view": { "stroke": null },
+    "axis": { "labelColor": "#46566b", "titleColor": "#46566b" },
+    "legend": { "labelColor": "#46566b", "titleColor": "#46566b" }
+  },
+  "transform": [{ "calculate": "random()", "as": "jitter" }],
+  "layer": [
+    {
+      "mark": { "type": "circle", "opacity": 0.65, "stroke": "#1F5F3A", "strokeWidth": 0.4 },
+      "encoding": {
+        "x": {
+          "field": "facilities_per_1k",
+          "type": "quantitative",
+          "title": "Facilities per 1,000 people  →  better per-person access",
+          "axis": { "grid": true, "gridColor": "#eef1ee" }
+        },
+        "y": { "field": "jitter", "type": "quantitative", "axis": null, "scale": { "domain": [-0.05, 1.05] } },
+        "size": {
+          "field": "population",
+          "type": "quantitative",
+          "title": "Population",
+          "scale": { "range": [20, 700] },
+          "legend": { "format": "~s" }
+        },
+        "color": { "value": "#2E8B57" },
+        "tooltip": [
+          { "field": "lga", "type": "nominal", "title": "Council" },
+          { "field": "facilities_per_1k", "type": "quantitative", "title": "Facilities per 1,000" },
+          { "field": "population", "type": "quantitative", "title": "Population", "format": "," }
+        ]
+      }
+    },
+    {
+      "transform": [{ "filter": "datum.facilities_per_1k >= 12" }],
+      "mark": { "type": "text", "align": "center", "dy": -14, "fontSize": 10, "fontWeight": 700, "color": "#1F5F3A" },
+      "encoding": {
+        "x": { "field": "facilities_per_1k", "type": "quantitative" },
+        "y": { "field": "jitter", "type": "quantitative" },
+        "text": { "field": "lga", "type": "nominal" }
+      }
+    }
+  ]
+}

@@ -4,5 +4,6 @@ FIT2179 Data Visualisation 2.pdf
 # Tooling / OS
 .claude/
 memory/
+serve.ps1
 .DS_Store
 Thumbs.db

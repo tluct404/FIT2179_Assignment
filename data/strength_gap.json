@@ -1,0 +1,4 @@
+[
+  { "label": "Do the recommended strength activity", "share": 27, "meets": true },
+  { "label": "Skip strength activity (under 2 days a week)", "share": 73, "meets": false }
+]

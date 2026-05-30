@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Victoria zoom-in: choropleth of sport & recreation facilities per 1,000 residents by Local Government Area (a DERIVED per-capita rate = facilities / population x 1000). Reveals that rural LGAs are far better supplied per person than fast-growing metro LGAs. Requires geo/LGA_2023_VIC_GDA2020.json (TopoJSON, feature LGA_2023_AUST_GDA2020). Sources: Victorian sport facilities dataset + ABS population (see README).",
+  "description": "Victoria zoom-in: choropleth of sport and recreation facilities per 1,000 residents by Local Government Area (a derived per-capita rate). Rural shires are far better supplied per person than fast-growing metro councils. Mercator projection. Sources: Victorian sport facilities dataset + ABS population; geometry: ABS ASGS 2023 (TopoJSON).",
   "width": "container",
-  "height": 380,
+  "height": 440,
   "config": {
     "font": "Inter, sans-serif",
     "view": { "stroke": null },
@@ -32,7 +32,7 @@
       "scale": { "scheme": "greens" }
     },
     "tooltip": [
-      { "field": "properties.LGA_NAME23", "type": "nominal", "title": "LGA" },
+      { "field": "properties.LGA_NAME23", "type": "nominal", "title": "Council" },
       { "field": "facilities", "type": "quantitative", "title": "Facilities", "format": "," },
       { "field": "population", "type": "quantitative", "title": "Population", "format": "," },
       { "field": "facilities_per_1k", "type": "quantitative", "title": "Per 1,000 people" }

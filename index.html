@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How Australia Plays — A Sport Participation Story</title>
+  <title>How Australia Plays - A Sport Participation Story</title>
   <meta name="author" content="tluct404" />
   <meta name="description"
     content="A data-visualisation story about how Australia plays sport: who is active, where, and how it changes across life. Built with Vega-Lite for FIT2179." />
@@ -32,9 +32,9 @@
       <p class="eyebrow">FIT2179 · Data Visualisation 2 · Australian Sport</p>
       <h1>How Australia Plays</h1>
       <p class="hero-sub">
-        Australians love their sport — but who actually plays, where do they play it,
-        and does staying active hold up across a lifetime? This is a data story about
-        the everyday reality of sport and physical activity across the country.
+        We're told we're a sporting nation. But behind the grand finals and the gold medals,
+        how do everyday Australians actually move - who plays, where, and does it last a
+        lifetime? The honest answer looks nothing like the highlight reel.
       </p>
       <p class="byline">By <strong>tluct404</strong> · May 2026 · Data: AusPlay (Australian Sports Commission) &amp; the Australian Bureau of Statistics</p>
       <p class="scroll-hint">Scroll to explore ↓</p>
@@ -46,13 +46,14 @@
     <!-- ===================== INTRO ===================== -->
     <section class="intro">
       <p>
-        Sport shapes how Australians spend their time, money and weekends — from a Saturday
-        swim to a local footy match. Yet the headline "we are a sporting nation" hides a more
-        interesting picture: participation is uneven across <strong>activities</strong>,
-        <strong>places</strong>, <strong>ages</strong> and <strong>incomes</strong>. This page
-        walks an everyday reader through that picture in four short chapters, using real national
-        survey data combined with population statistics. No statistics background is needed — every
-        chart is annotated with the point it makes.
+        Ask an Australian about sport and they will picture the Melbourne Cricket Ground on grand
+        final day. Yet the way
+        the country really moves is quieter and more surprising: far more of us are doing laps at the
+        local pool or walking the dog than running onto an oval. Over four short chapters, this story
+        follows the true shape of Australian sport - <strong>what</strong> we play,
+        <strong>where</strong> the active millions live, <strong>who</strong> gets left on the
+        sidelines, and <strong>why</strong> the hardest person to get moving is a busy 45-year-old.
+        Every figure is real survey data; no statistics background needed.
       </p>
     </section>
 
@@ -62,38 +63,39 @@
         <span class="chapter-num">01</span>
         <h2>How active are we, really?</h2>
         <p class="chapter-lead">
-          Most Australians move at least sometimes — but the share drops sharply once we ask
-          how <em>often</em>, and most of that activity happens informally rather than at a club.
+          Almost everyone moves a little. Far fewer move <em>enough</em> - and when they do, it is
+          rarely at a club. The numbers behind "the sporting nation" tell a more honest story.
         </p>
       </div>
 
       <div class="card full">
-        <h3>Activity thins out as we ask for more commitment</h3>
-        <div id="vis-kpi" class="vis"></div>
+        <h3>Getting started is easy. Keeping it up isn't.</h3>
+        <div id="vis-funnel" class="vis"></div>
         <p class="insight">
-          Five in six adults are active at least once a year, but only about half manage three or
-          more sessions a week. The gap between "occasionally active" and "regularly active" is
-          where most of the public-health challenge sits.
+          Watch the crowd thin out. Five in six adults move at least once a year, but barely half
+          keep it going three times a week. Australia's real challenge isn't getting people off the
+          couch - it's keeping them off it.
         </p>
       </div>
 
-      <div class="grid-2">
+      <div class="grid-2 band-360">
         <div class="card">
-          <h3>Swimming is the runaway national sport</h3>
+          <h3>The national sport isn't a contact sport</h3>
           <div id="vis-sports" class="vis"></div>
           <p class="insight">
-            Swimming attracts more than three million adult participants — far ahead of soccer,
-            tennis and basketball. The most popular activities are accessible and individual,
-            not the professional team codes we watch on television.
+            Australia's number-one sport is one you can do alone, indoors, at any age: swimming pulls
+            in more adults than soccer, tennis and basketball <em>combined</em>. The activities that
+            win are the easy-to-reach ones - not the famous codes that fill stadiums on the weekend.
           </p>
         </div>
         <div class="card">
-          <h3>Most of us play on our own terms</h3>
+          <h3>And most of it happens far from a club</h3>
           <div id="vis-where" class="vis"></div>
           <p class="insight">
-            Two-thirds of active adults organise activity themselves or with friends. Clubs and
-            gyms matter, but informal, self-directed activity is the backbone of how Australia
-            stays active. <span class="note">(Settings overlap — a person can use several.)</span>
+            A jog after work, a weekend hike, a hit at the local courts: two in three active adults
+            organise it themselves or with friends. Clubs and gyms still matter, but the real
+            backbone of active Australia is informal and self-directed.
+            <span class="note">(Settings overlap - a person can use several.)</span>
           </p>
         </div>
       </div>
@@ -105,41 +107,32 @@
         <span class="chapter-num">02</span>
         <h2>Where the active millions are</h2>
         <p class="chapter-lead">
-          Combining each state's population with the national weekly-activity rate shows where
-          Australia's active people are concentrated — and why raw numbers can mislead.
+          If most Australians are quietly active on their own, where are they all? Pairing each
+          state's population with the national activity rate maps where the active millions live -
+          and shows why big numbers can fool you.
         </p>
       </div>
 
-      <div class="grid-2">
+      <div class="grid-2 band-380">
         <div class="card">
-          <h3>Population is heavily skewed to the south-east</h3>
-          <div id="vis-statepop" class="vis"></div>
-          <p class="insight">
-            New South Wales and Victoria alone hold well over half of all Australians. Any
-            national count of "active people" will be dominated by these two states simply
-            because that is where most people live.
-          </p>
-        </div>
-        <div class="card">
-          <h3>So are the active millions — by sheer headcount</h3>
+          <h3>The active headcount follows the crowd</h3>
           <div id="vis-stateactive" class="vis"></div>
           <p class="insight">
-            Applying AusPlay's 66% weekly-active rate to each state's population estimates roughly
-            5.6&nbsp;million weekly-active people in NSW versus 168,000 in the NT. Big totals reflect
-            big populations — which is exactly why access is better judged <em>per person</em>.
+            Sizing each state by its estimated weekly-active people - population scaled by AusPlay's
+            66% activity rate - puts roughly 5.6&nbsp;million in New South Wales against 168,000 in
+            the Northern Territory. Bigger isn't fitter, though; it's just bigger.
           </p>
         </div>
-      </div>
-
-      <div class="card full">
-        <h3>Explore it yourself: click a state to compare</h3>
-        <div id="vis-linked" class="vis vis-wide"></div>
-        <p class="insight">
-          The map and ranking are linked. Click any state — on the map or the bar — to highlight it
-          in both views, and click empty space to reset. It makes the population-driven ordering of
-          "active headcount" tangible, and sets up the real question: is being active equally
-          <em>accessible</em> everywhere? For that we zoom into Victoria.
-        </p>
+        <div class="card">
+          <h3>Half the country lives in two states</h3>
+          <div id="vis-statearc" class="vis"></div>
+          <p class="insight">
+            The reason is sheer population: New South Wales and Victoria together hold more than half
+            of all Australians. A national tally of "active people" is really a story about where we
+            live - so to compare places fairly, you have to ask how much each <em>person</em> gets.
+            That is where Victoria comes in.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -149,43 +142,51 @@
         <span class="chapter-num">03</span>
         <h2>Victoria up close: access isn't equal</h2>
         <p class="chapter-lead">
-          Zooming from the nation to Victoria's 79 local councils reveals that the places with the
-          most people are not the places with the best access to sport facilities.
+          Down at council level, a fairer test emerges - not how many facilities a place has, but
+          how many it has <em>per person</em>. The answer turns the city-versus-country cliché on
+          its head.
         </p>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>Rural councils are best supplied per person</h3>
-          <div id="vis-vicchoro" class="vis"></div>
-          <p class="insight">
-            Measured as facilities per 1,000 residents, small rural shires such as Buloke, West
-            Wimmera and Yarriambiack top the state, while fast-growing outer-metro councils like
-            Melton, Wyndham and Casey sit near the bottom. Big populations dilute per-person access.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Does provision follow community need?</h3>
-          <div id="vis-vicsymbol" class="vis"></div>
-          <p class="insight">
-            Each circle is a council, sized by its total facilities and coloured by socio-economic
-            advantage (SEIFA). Use the legend to filter deciles and see whether facilities cluster
-            in advantaged or disadvantaged areas.
-            <span class="note">Renders once SEIFA decile and coordinates are added to <code>data/vic_lga.json</code>.</span>
-          </p>
-        </div>
       </div>
 
       <div class="card full">
-        <h3>Advantage vs. access, council by council</h3>
-        <div id="vis-vicscatter" class="vis"></div>
+        <h3>Counter-intuitively, the bush wins</h3>
+        <div class="map-wrap">
+          <div id="vis-vicchoro" class="vis"></div>
+          <!-- HTML/CSS leader-line annotation pointing to the rural north-west -->
+          <div class="map-callout">
+            <div class="map-callout-text">Rural Mallee &amp; Wimmera shires<br>lead the state per person</div>
+            <div class="map-callout-line"></div>
+          </div>
+        </div>
         <p class="insight">
-          Each point is a council: its socio-economic advantage on the horizontal axis, its
-          facilities per 1,000 people on the vertical. The trend line summarises the relationship,
-          letting a general reader see at a glance whether wealthier areas enjoy more sport
-          infrastructure per person — without needing any statistics.
-          <span class="note">Renders once SEIFA decile is added to <code>data/vic_lga.json</code>.</span>
+          Mapped as facilities per 1,000 people, tiny rural shires (Buloke, West Wimmera and
+          Yarriambiack) top the state, while booming outer-metro councils like Melton, Wyndham and
+          Casey sit near the bottom. Rapid growth has outrun the courts, ovals and pools meant to
+          serve it.
         </p>
+      </div>
+
+      <div class="grid-2 band-360">
+        <div class="card">
+          <h3>Wealth doesn't buy access; if anything, the reverse</h3>
+          <div id="vis-vicscatter" class="vis"></div>
+          <p class="insight">
+            Each council is a bubble sized by population, plotting advantage (SEIFA, a standard score
+            where a low value means more disadvantage) against facilities per person. The trend line
+            slopes gently <em>downward</em>: wealthy, dense inner-Melbourne councils have fewer
+            facilities per person, while smaller regional councils have more.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Most councils sit at the low end</h3>
+          <div id="vis-vicbeeswarm" class="vis"></div>
+          <p class="insight">
+            Every dot is one council, placed by facilities per 1,000 people and sized by population.
+            The bulk cluster at one to two per 1,000, with a long tail of rural shires reaching past
+            ten. Crucially, the dots on that tail are the <em>smallest</em>: high per-person access
+            is really a story about places with very few residents.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -195,37 +196,41 @@
         <span class="chapter-num">04</span>
         <h2>Who keeps moving through life?</h2>
         <p class="chapter-lead">
-          Meeting the physical activity guidelines — enough exercise for real health benefits —
-          depends a lot on age, sex and income.
+          Staying active isn't only about where you live - it's about where you are in life. Meeting
+          the activity guidelines (enough exercise for real health benefits) rises and falls with
+          age, and tilts with sex and income. Men hold a slim edge over women - about one in four
+          versus one in five - and the sexes favour different activities: women lead in Pilates, yoga
+          and walking, men in basketball, soccer and golf.
         </p>
       </div>
 
       <div class="card full">
-        <h3>A midlife dip, then a retirement rebound</h3>
+        <h3>Fitness has a midlife slump</h3>
         <div id="vis-age" class="vis"></div>
         <p class="insight">
-          The share of adults meeting the guidelines falls steadily from the late teens to a low
-          around 55–64, then jumps back up at 65+, when many Australians find time to walk, swim
-          and garden. The challenge years are the busy, time-poor middle decades.
+          The share meeting the guidelines slides from 31% of 18–24s to just 16% at 55–64 - the
+          time-poor years of careers and kids - then rebounds sharply to 33% past 65, when people
+          finally have time to walk, swim and garden. The hardest person to get moving isn't the
+          retiree; it's the busy 45-year-old.
         </p>
       </div>
 
-      <div class="grid-2">
+      <div class="grid-2 band-300">
         <div class="card">
-          <h3>Men edge out women on the guidelines</h3>
-          <div id="vis-sex" class="vis"></div>
+          <h3>Almost nobody lifts</h3>
+          <div id="vis-strength" class="vis"></div>
           <p class="insight">
-            About one in four men meet the guidelines, compared with one in five women. Preferences
-            differ too: AusPlay finds women lead in Pilates, yoga and walking, while men lead in
-            basketball, soccer and golf.
+            Even among the active, one part of the guidelines is widely skipped: 73 in 100 adults do
+            no muscle-strengthening activity on two or more days a week. Australians are happy to
+            move - far less keen to build strength.
           </p>
         </div>
         <div class="card">
           <h3>Sport still tracks the wallet</h3>
           <div id="vis-income" class="vis"></div>
           <p class="insight">
-            Participation climbs from 79% in lower-income households to 94% in the highest-earning
-            ones — a reminder that cost and time remain real barriers to an active life.
+            Participation climbs from 79% in lower-income households to 94% in the wealthiest -
+            proof that money and time are still quiet gatekeepers to an active life.
           </p>
         </div>
       </div>
@@ -233,14 +238,15 @@
 
     <!-- ===================== TAKEAWAY ===================== -->
     <section class="takeaway">
-      <h2>So what?</h2>
+      <h2>So, are we a sporting nation?</h2>
       <p>
-        Australia is active, but unevenly so. The activities that draw the biggest crowds are the
-        accessible ones; the active headcount follows population, but per-person access does not;
-        and staying active is hardest in busy midlife and in lower-income households. If the goal is
-        a genuinely sporting nation, the data points less at elite codes and more at
-        <strong>everyday access</strong> — local pools, paths and courts, close to where people
-        actually live.
+        Yes - but not the one on television. Australians are at their most active in the pool, on the
+        footpath and on their own schedule, and the biggest crowds follow the easiest activities, not
+        the famous codes. Where we fall short is <strong>access</strong> and
+        <strong>staying power</strong>: facilities thin out in the fast-growing suburbs, motivation
+        dips in busy midlife, and cost still keeps lower-income households on the sidelines. A
+        genuinely sporting nation is built less on stadiums than on the local pool, path and court -
+        within reach of everyone, at every age.
       </p>
     </section>
 
@@ -250,36 +256,40 @@
         <div>
           <h4>About this visualisation</h4>
           <p><strong>Why.</strong> To help an everyday Australian understand how the nation really
-            plays sport — turning raw participation tables into a picture of who is active, where,
+            plays sport - turning raw participation tables into a picture of who is active, where,
             and how it changes with age and income.</p>
           <p><strong>Who.</strong> A general Australian audience. Technical terms (SEIFA, "meeting
             the guidelines") are introduced in plain language where they appear.</p>
-          <p><strong>What &amp; How.</strong> Twelve Vega-Lite visualisations — including five maps —
-            combining two data sources. Custom, derived elements include the estimated weekly-active
-            population (population × national activity rate), the linked map-and-bar, the per-capita
-            facility maps and the advantage-vs-access scatter.</p>
+          <p><strong>What &amp; How.</strong> Eleven Vega-Lite visualisations spanning distinct idioms
+            (funnel, lollipop, bar, proportional-symbol map, donut, bubble scatter, choropleth map,
+            beeswarm, line, waffle and dumbbell) and combining two data sources. The custom-built,
+            harder-to-automate pieces include the estimated weekly-active population (population times
+            the national activity rate), the centred-bar participation funnel, the population-sized
+            bubble scatter and beeswarm, and the per-capita facility choropleth.</p>
         </div>
         <div>
           <h4>Data sources</h4>
           <ul class="sources">
-            <li><strong>AusPlay</strong> — national sport &amp; physical activity participation,
+            <li><strong>AusPlay</strong> - national sport &amp; physical activity participation,
               Australian Sports Commission.
               <a href="https://www.clearinghouseforsport.gov.au/research/ausplay/results">clearinghouseforsport.gov.au/research/ausplay/results</a>
             </li>
-            <li><strong>ABS — National, state and territory population</strong>, June 2024.
+            <li><strong>ABS - National, state and territory population</strong>, June 2024.
               <a href="https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/jun-2024">abs.gov.au</a>
             </li>
-            <li><strong>ABS — Physical activity</strong> (National Health Survey, 2022).
+            <li><strong>ABS - Physical activity</strong> (National Health Survey, 2022).
               <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/physical-activity/latest-release">abs.gov.au</a>
             </li>
-            <li><strong>ABS — SEIFA 2021</strong> (Index of Relative Socio-economic Disadvantage),
+            <li><strong>ABS - SEIFA 2021</strong> (Index of Relative Socio-economic Disadvantage),
               used for the Victorian maps.
               <a href="https://www.abs.gov.au/statistics/people/people-and-communities/socio-economic-indexes-areas-seifa-australia/latest-release">abs.gov.au</a>
             </li>
-            <li><strong>State boundaries</strong> — rowanhogan/australian-states (GeoJSON).
+            <li><strong>State boundaries</strong> - rowanhogan/australian-states (GeoJSON).
               <a href="https://github.com/rowanhogan/australian-states">github.com/rowanhogan/australian-states</a>
             </li>
-            <li><strong>Victorian LGA boundaries</strong> — ABS ASGS 2023, simplified to TopoJSON.</li>
+            <li><strong>Victorian LGA boundaries</strong> - ABS ASGS 2023 (simplified TopoJSON), via sherwinzxw/australian-spatial-data.
+              <a href="https://github.com/sherwinzxw/australian-spatial-data">github.com/sherwinzxw/australian-spatial-data</a>
+            </li>
           </ul>
         </div>
       </div>

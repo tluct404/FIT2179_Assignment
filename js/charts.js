@@ -1,5 +1,5 @@
 /* ============================================================
-   How Australia Plays — chart loader
+   How Australia Plays - chart loader
    Embeds each external Vega-Lite spec by URL into its container.
    Specs are kept as separate, human-readable JSON files in /specs
    so they are easy to browse on GitHub.
@@ -11,20 +11,19 @@ const embedOptions = {
   config: { background: null }
 };
 
-// container id  ->  spec file
+// container id  ->  spec file  (distinct idioms; several custom-built)
 const charts = [
-  ['vis-kpi',          'specs/01_kpi_strip.vl.json'],
-  ['vis-sports',       'specs/02_top_sports_lollipop.vl.json'],
-  ['vis-where',        'specs/03_where_active_bar.vl.json'],
-  ['vis-statepop',     'specs/04_state_pop_choropleth.vl.json'],
-  ['vis-stateactive',  'specs/05_state_active_symbols.vl.json'],
-  ['vis-linked',       'specs/06_state_linked_bar.vl.json'],
-  ['vis-vicchoro',     'specs/07_vic_choropleth.vl.json'],
-  ['vis-vicsymbol',    'specs/08_vic_symbol_seifa.vl.json'],
-  ['vis-vicscatter',   'specs/09_vic_scatter_seifa.vl.json'],
-  ['vis-age',          'specs/10_age_line.vl.json'],
-  ['vis-sex',          'specs/11_sex_bars.vl.json'],
-  ['vis-income',       'specs/12_income_dumbbell.vl.json']
+  ['vis-funnel',      'specs/01_participation_funnel.vl.json'], // funnel (derived)
+  ['vis-sports',      'specs/02_top_sports_lollipop.vl.json'],  // lollipop
+  ['vis-where',       'specs/03_where_active_bar.vl.json'],     // bar
+  ['vis-stateactive', 'specs/04_state_active_symbols.vl.json'], // proportional-symbol map
+  ['vis-statearc',    'specs/05_state_arc.vl.json'],            // donut / arc
+  ['vis-vicchoro',    'specs/06_vic_choropleth.vl.json'],       // choropleth map
+  ['vis-vicscatter',  'specs/07_vic_bubble_scatter.vl.json'],   // bubble scatter (size = population)
+  ['vis-vicbeeswarm', 'specs/08_vic_beeswarm.vl.json'],         // beeswarm / jittered strip
+  ['vis-age',         'specs/09_age_line.vl.json'],             // line
+  ['vis-strength',    'specs/10_strength_waffle.vl.json'],      // waffle / unit chart
+  ['vis-income',      'specs/11_income_dumbbell.vl.json']       // dumbbell
 ];
 
 charts.forEach(([id, spec]) => {

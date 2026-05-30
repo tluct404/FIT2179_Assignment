@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Dumbbell (connected dot) plot of the income gap in sport participation. A connecting rule spans from lower-income to higher-income households, with a labelled dot at each end, making the 15-point gap the visual focus while keeping a very high data-ink ratio. Source: AusPlay (Australian Sports Commission).",
   "width": "container",
-  "height": 130,
+  "height": 170,
   "config": {
     "font": "Inter, sans-serif",
     "axis": { "labelColor": "#46566b", "titleColor": "#46566b" },
@@ -54,6 +54,15 @@
     {
       "mark": { "type": "text", "dy": -20, "fontWeight": 700, "fontSize": 12, "color": "#46566b" },
       "encoding": { "text": { "field": "participation", "type": "quantitative", "format": ".0f" } }
+    },
+    {
+      "data": { "values": [{ "mid": 86.5, "row": "Adults", "lbl": "15% difference" }] },
+      "mark": { "type": "text", "dy": -42, "fontWeight": 800, "fontSize": 12, "color": "#1F5F3A" },
+      "encoding": {
+        "x": { "field": "mid", "type": "quantitative" },
+        "y": { "field": "row", "type": "nominal" },
+        "text": { "field": "lbl", "type": "nominal" }
+      }
     }
   ]
 }

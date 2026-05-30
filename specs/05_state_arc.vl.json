@@ -1,0 +1,51 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Donut chart of each state and territory's share of Australia's population, with a centred annotation summarising the headline (NSW + VIC = 57%). An arc (part-to-whole) idiom is used because the story is composition. Angle encodes share; labels give the percentage for the larger slices. Source: ABS Estimated Resident Population, June 2024.",
+  "width": "container",
+  "height": 360,
+  "data": { "url": "data/state_population.json" },
+  "config": {
+    "font": "Inter, sans-serif",
+    "view": { "stroke": null },
+    "legend": { "labelColor": "#46566b", "titleColor": "#46566b" }
+  },
+  "layer": [
+    {
+      "mark": { "type": "arc", "innerRadius": 78, "outerRadius": 132, "stroke": "#ffffff", "strokeWidth": 1.5 },
+      "encoding": {
+        "theta": { "field": "population", "type": "quantitative", "stack": true },
+        "order": { "field": "population", "sort": "descending" },
+        "color": {
+          "field": "abbr",
+          "type": "nominal",
+          "sort": { "field": "population", "order": "descending" },
+          "title": "State / Territory",
+          "scale": { "range": ["#1F5F3A", "#2E8B57", "#5aa97c", "#8fce9f", "#F2A900", "#f6c14b", "#cdb86a", "#9aa7a0"] }
+        },
+        "tooltip": [
+          { "field": "state", "type": "nominal", "title": "State / Territory" },
+          { "field": "population", "type": "quantitative", "title": "Residents", "format": "," },
+          { "field": "pct_national", "type": "quantitative", "title": "Share of Australia (%)" }
+        ]
+      }
+    },
+    {
+      "transform": [
+        { "filter": "datum.pct_national >= 4" },
+        { "calculate": "format(datum.pct_national, '.0f') + '%'", "as": "pctlabel" }
+      ],
+      "mark": { "type": "text", "radius": 157, "fontSize": 12, "fontWeight": 700 },
+      "encoding": {
+        "theta": { "field": "population", "type": "quantitative", "stack": true },
+        "order": { "field": "population", "sort": "descending" },
+        "text": { "field": "pctlabel", "type": "nominal" },
+        "color": { "value": "#46566b" }
+      }
+    },
+    {
+      "data": { "values": [{ "line1": "NSW + VIC", "line2": "= 57%" }] },
+      "mark": { "type": "text", "fontSize": 15, "fontWeight": 800, "color": "#1F5F3A", "lineBreak": "|" },
+      "encoding": { "text": { "value": ["NSW + VIC", "= 57% of", "the nation"] } }
+    }
+  ]
+}

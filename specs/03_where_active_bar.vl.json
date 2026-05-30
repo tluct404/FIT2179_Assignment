@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Where Australian adults are active. Horizontal bars compare the share of participants using each setting. Categories overlap (a person can be active in several settings), so this is intentionally NOT a part-to-whole pie. Hue separates informal from organised settings. Source: AusPlay (Australian Sports Commission).",
   "width": "container",
-  "height": 220,
+  "height": 360,
   "data": { "url": "data/where_active.json" },
   "config": {
     "font": "Inter, sans-serif",

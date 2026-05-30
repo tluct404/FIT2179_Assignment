@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Waffle (unit) chart: each of 100 squares is one in a hundred Australian adults, coloured by whether they do the recommended muscle-strengthening activity on at least two days a week. 73 in 100 do not. The unit-chart idiom turns an abstract percentage into a countable, human-scale picture. Source: ABS National Health Survey 2022 (adults 18-64).",
+  "width": 260,
+  "height": 260,
+  "data": { "sequence": { "start": 0, "stop": 100, "step": 1, "as": "i" } },
+  "config": {
+    "font": "Inter, sans-serif",
+    "view": { "stroke": null },
+    "legend": { "orient": "bottom", "labelColor": "#46566b", "title": null, "labelLimit": 320 }
+  },
+  "transform": [
+    { "calculate": "floor(datum.i / 10)", "as": "row" },
+    { "calculate": "datum.i % 10", "as": "col" },
+    { "calculate": "datum.i < 73 ? 'Skips strength activity' : 'Does strength activity'", "as": "cat" }
+  ],
+  "mark": { "type": "square", "size": 360, "stroke": "#ffffff", "strokeWidth": 2 },
+  "encoding": {
+    "x": { "field": "col", "type": "ordinal", "axis": null, "scale": { "paddingInner": 0.12 } },
+    "y": { "field": "row", "type": "ordinal", "axis": null, "sort": "descending", "scale": { "paddingInner": 0.12 } },
+    "color": {
+      "field": "cat",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Skips strength activity", "Does strength activity"],
+        "range": ["#d7ddd8", "#2E8B57"]
+      }
+    },
+    "tooltip": null
+  }
+}

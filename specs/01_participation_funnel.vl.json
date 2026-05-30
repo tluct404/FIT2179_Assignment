@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Funnel chart of the three nested levels of adult activity (at least yearly, weekly, three-plus times a week). Built with derived data: each bar is centred by computing -share/2 to +share/2, so the funnel narrows downward and shows how activity 'thins out' as the bar of commitment is raised. Labels are centred inside each bar. Source: AusPlay (Australian Sports Commission).",
+  "width": "container",
+  "height": 240,
+  "data": { "url": "data/national_headline.json" },
+  "config": {
+    "font": "Inter, sans-serif",
+    "view": { "stroke": null }
+  },
+  "transform": [
+    { "calculate": "-datum.share/2", "as": "x0" },
+    { "calculate": "datum.share/2", "as": "x1" },
+    { "calculate": "datum.share + '%'", "as": "pct" }
+  ],
+  "encoding": {
+    "y": {
+      "field": "metric",
+      "type": "nominal",
+      "sort": { "field": "order" },
+      "axis": null
+    },
+    "x": {
+      "field": "x0",
+      "type": "quantitative",
+      "axis": null,
+      "scale": { "domain": [-50, 50] }
+    }
+  },
+  "layer": [
+    {
+      "mark": { "type": "bar", "cornerRadius": 6, "height": { "band": 0.7 }, "color": "#2E8B57" },
+      "encoding": {
+        "x2": { "field": "x1" },
+        "tooltip": [
+          { "field": "metric", "type": "nominal", "title": "Australian adults who are active" },
+          { "field": "share", "type": "quantitative", "title": "Share (%)" }
+        ]
+      }
+    },
+    {
+      "mark": { "type": "text", "dy": -8, "fontWeight": 800, "fontSize": 22, "color": "#ffffff" },
+      "encoding": {
+        "x": { "datum": 0, "type": "quantitative" },
+        "text": { "field": "pct", "type": "nominal" }
+      }
+    },
+    {
+      "mark": { "type": "text", "dy": 16, "fontSize": 12, "fontWeight": 600, "color": "#eafaf0" },
+      "encoding": {
+        "x": { "datum": 0, "type": "quantitative" },
+        "text": { "field": "metric", "type": "nominal" }
+      }
+    }
+  ]
+}

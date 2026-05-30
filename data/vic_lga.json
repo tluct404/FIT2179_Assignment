@@ -1,81 +1,713 @@
 [
-  { "lga": "Alpine",               "facilities": 58,  "population": 13236,  "facilities_per_1k": 4.38,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Ararat",               "facilities": 72,  "population": 11732,  "facilities_per_1k": 6.14,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Ballarat",             "facilities": 216, "population": 122661, "facilities_per_1k": 1.76,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Banyule",              "facilities": 126, "population": 132770, "facilities_per_1k": 0.95,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Bass Coast",           "facilities": 59,  "population": 44377,  "facilities_per_1k": 1.33,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Baw Baw",              "facilities": 160, "population": 62784,  "facilities_per_1k": 2.55,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Bayside (Vic.)",       "facilities": 101, "population": 107164, "facilities_per_1k": 0.94,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Benalla",              "facilities": 42,  "population": 14581,  "facilities_per_1k": 2.88,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Boroondara",           "facilities": 163, "population": 178601, "facilities_per_1k": 0.91,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Brimbank",             "facilities": 245, "population": 198181, "facilities_per_1k": 1.24,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Buloke",               "facilities": 78,  "population": 5887,   "facilities_per_1k": 13.25, "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Campaspe",             "facilities": 144, "population": 37954,  "facilities_per_1k": 3.79,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Cardinia",             "facilities": 123, "population": 133472, "facilities_per_1k": 0.92,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Casey",                "facilities": 239, "population": 414929, "facilities_per_1k": 0.58,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Central Goldfields",   "facilities": 68,  "population": 13753,  "facilities_per_1k": 4.94,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Colac Otway",          "facilities": 104, "population": 22209,  "facilities_per_1k": 4.68,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Corangamite",          "facilities": 100, "population": 15712,  "facilities_per_1k": 6.36,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Darebin",              "facilities": 130, "population": 162496, "facilities_per_1k": 0.80,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "East Gippsland",       "facilities": 155, "population": 49669,  "facilities_per_1k": 3.12,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Frankston",            "facilities": 117, "population": 145369, "facilities_per_1k": 0.80,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Gannawarra",           "facilities": 86,  "population": 10311,  "facilities_per_1k": 8.34,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Glen Eira",            "facilities": 108, "population": 163025, "facilities_per_1k": 0.66,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Glenelg",              "facilities": 98,  "population": 19908,  "facilities_per_1k": 4.92,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Golden Plains",        "facilities": 98,  "population": 26620,  "facilities_per_1k": 3.68,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Greater Bendigo",      "facilities": 231, "population": 126568, "facilities_per_1k": 1.83,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Greater Dandenong",    "facilities": 118, "population": 168684, "facilities_per_1k": 0.70,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Greater Geelong",      "facilities": 339, "population": 295052, "facilities_per_1k": 1.15,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Greater Shepparton",   "facilities": 177, "population": 69865,  "facilities_per_1k": 2.53,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Hepburn",              "facilities": 47,  "population": 17011,  "facilities_per_1k": 2.76,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Hindmarsh",            "facilities": 49,  "population": 5447,   "facilities_per_1k": 9.00,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Hobsons Bay",          "facilities": 117, "population": 97031,  "facilities_per_1k": 1.21,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Horsham",              "facilities": 86,  "population": 20252,  "facilities_per_1k": 4.25,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Hume",                 "facilities": 177, "population": 278885, "facilities_per_1k": 0.63,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Indigo",               "facilities": 56,  "population": 17758,  "facilities_per_1k": 3.15,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Kingston (Vic.)",      "facilities": 183, "population": 168061, "facilities_per_1k": 1.09,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Knox",                 "facilities": 206, "population": 163820, "facilities_per_1k": 1.26,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Latrobe (Vic.)",       "facilities": 142, "population": 79112,  "facilities_per_1k": 1.79,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Loddon",               "facilities": 77,  "population": 7718,   "facilities_per_1k": 9.98,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Macedon Ranges",       "facilities": 120, "population": 54464,  "facilities_per_1k": 2.20,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Manningham",           "facilities": 110, "population": 132912, "facilities_per_1k": 0.83,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Mansfield",            "facilities": 42,  "population": 10979,  "facilities_per_1k": 3.83,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Maribyrnong",          "facilities": 72,  "population": 94672,  "facilities_per_1k": 0.76,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Maroondah",            "facilities": 125, "population": 120247, "facilities_per_1k": 1.04,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Melbourne",            "facilities": 142, "population": 194481, "facilities_per_1k": 0.73,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Melton",               "facilities": 102, "population": 231567, "facilities_per_1k": 0.44,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Merri-bek",            "facilities": 138, "population": 189108, "facilities_per_1k": 0.73,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Mildura",              "facilities": 114, "population": 57309,  "facilities_per_1k": 1.99,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Mitchell",             "facilities": 96,  "population": 58459,  "facilities_per_1k": 1.64,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Moira",                "facilities": 116, "population": 30866,  "facilities_per_1k": 3.76,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Monash",               "facilities": 161, "population": 211833, "facilities_per_1k": 0.76,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Moonee Valley",        "facilities": 98,  "population": 130501, "facilities_per_1k": 0.75,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Moorabool",            "facilities": 68,  "population": 40472,  "facilities_per_1k": 1.68,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Mornington Peninsula", "facilities": 232, "population": 172217, "facilities_per_1k": 1.35,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Mount Alexander",      "facilities": 87,  "population": 20939,  "facilities_per_1k": 4.15,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Moyne",                "facilities": 131, "population": 17760,  "facilities_per_1k": 7.38,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Murrindindi",          "facilities": 76,  "population": 15648,  "facilities_per_1k": 4.86,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Nillumbik",            "facilities": 137, "population": 63797,  "facilities_per_1k": 2.15,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Northern Grampians",   "facilities": 65,  "population": 11804,  "facilities_per_1k": 5.51,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Port Phillip",         "facilities": 38,  "population": 114434, "facilities_per_1k": 0.33,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Pyrenees",             "facilities": 54,  "population": 7957,   "facilities_per_1k": 6.79,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Queenscliffe",         "facilities": 17,  "population": 3317,   "facilities_per_1k": 5.13,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "South Gippsland",      "facilities": 152, "population": 31109,  "facilities_per_1k": 4.89,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Southern Grampians",   "facilities": 86,  "population": 16483,  "facilities_per_1k": 5.22,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Stonnington",          "facilities": 118, "population": 114789, "facilities_per_1k": 1.03,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Strathbogie",          "facilities": 56,  "population": 11839,  "facilities_per_1k": 4.73,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Surf Coast",           "facilities": 124, "population": 40265,  "facilities_per_1k": 3.08,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Swan Hill",            "facilities": 74,  "population": 20962,  "facilities_per_1k": 3.53,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Towong",               "facilities": 37,  "population": 6158,   "facilities_per_1k": 6.01,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Wangaratta",           "facilities": 117, "population": 30089,  "facilities_per_1k": 3.89,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Warrnambool",          "facilities": 39,  "population": 36255,  "facilities_per_1k": 1.08,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Wellington",           "facilities": 162, "population": 46551,  "facilities_per_1k": 3.48,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "West Wimmera",         "facilities": 49,  "population": 3915,   "facilities_per_1k": 12.52, "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Whitehorse",           "facilities": 138, "population": 185256, "facilities_per_1k": 0.74,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Whittlesea",           "facilities": 131, "population": 259759, "facilities_per_1k": 0.50,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Wodonga",              "facilities": 45,  "population": 44717,  "facilities_per_1k": 1.01,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Wyndham",              "facilities": 161, "population": 347830, "facilities_per_1k": 0.46,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Yarra",                "facilities": 92,  "population": 101356, "facilities_per_1k": 0.91,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Yarra Ranges",         "facilities": 197, "population": 160906, "facilities_per_1k": 1.22,  "seifa_irsd_decile": null, "lat": null, "lon": null },
-  { "lga": "Yarriambiack",         "facilities": 82,  "population": 6295,   "facilities_per_1k": 13.03, "seifa_irsd_decile": null, "lat": null, "lon": null }
+  {
+    "lga": "Alpine",
+    "facilities": 58,
+    "population": 13236,
+    "facilities_per_1k": 4.38,
+    "seifa_irsd_decile": 9,
+    "lat": -36.8536,
+    "lon": 146.9742
+  },
+  {
+    "lga": "Ararat",
+    "facilities": 72,
+    "population": 11732,
+    "facilities_per_1k": 6.14,
+    "seifa_irsd_decile": 4,
+    "lat": -37.4727,
+    "lon": 142.8432
+  },
+  {
+    "lga": "Ballarat",
+    "facilities": 216,
+    "population": 122661,
+    "facilities_per_1k": 1.76,
+    "seifa_irsd_decile": 6,
+    "lat": -37.4929,
+    "lon": 143.7815
+  },
+  {
+    "lga": "Banyule",
+    "facilities": 126,
+    "population": 132770,
+    "facilities_per_1k": 0.95,
+    "seifa_irsd_decile": 10,
+    "lat": -37.7304,
+    "lon": 145.0851
+  },
+  {
+    "lga": "Bass Coast",
+    "facilities": 59,
+    "population": 44377,
+    "facilities_per_1k": 1.33,
+    "seifa_irsd_decile": 7,
+    "lat": -38.5071,
+    "lon": 145.5578
+  },
+  {
+    "lga": "Baw Baw",
+    "facilities": 160,
+    "population": 62784,
+    "facilities_per_1k": 2.55,
+    "seifa_irsd_decile": 7,
+    "lat": -37.9839,
+    "lon": 146.1313
+  },
+  {
+    "lga": "Bayside (Vic.)",
+    "facilities": 101,
+    "population": 107164,
+    "facilities_per_1k": 0.94,
+    "seifa_irsd_decile": 10,
+    "lat": -37.9418,
+    "lon": 145.0182
+  },
+  {
+    "lga": "Benalla",
+    "facilities": 42,
+    "population": 14581,
+    "facilities_per_1k": 2.88,
+    "seifa_irsd_decile": 5,
+    "lat": -36.587,
+    "lon": 146.0238
+  },
+  {
+    "lga": "Boroondara",
+    "facilities": 163,
+    "population": 178601,
+    "facilities_per_1k": 0.91,
+    "seifa_irsd_decile": 10,
+    "lat": -37.8193,
+    "lon": 145.0631
+  },
+  {
+    "lga": "Brimbank",
+    "facilities": 245,
+    "population": 198181,
+    "facilities_per_1k": 1.24,
+    "seifa_irsd_decile": 2,
+    "lat": -37.7476,
+    "lon": 144.8033
+  },
+  {
+    "lga": "Buloke",
+    "facilities": 78,
+    "population": 5887,
+    "facilities_per_1k": 13.25,
+    "seifa_irsd_decile": 5,
+    "lat": -35.9124,
+    "lon": 143.0049
+  },
+  {
+    "lga": "Campaspe",
+    "facilities": 144,
+    "population": 37954,
+    "facilities_per_1k": 3.79,
+    "seifa_irsd_decile": 4,
+    "lat": -36.3452,
+    "lon": 144.7164
+  },
+  {
+    "lga": "Cardinia",
+    "facilities": 123,
+    "population": 133472,
+    "facilities_per_1k": 0.92,
+    "seifa_irsd_decile": 8,
+    "lat": -38.0831,
+    "lon": 145.5725
+  },
+  {
+    "lga": "Casey",
+    "facilities": 239,
+    "population": 414929,
+    "facilities_per_1k": 0.58,
+    "seifa_irsd_decile": 7,
+    "lat": -38.1044,
+    "lon": 145.309
+  },
+  {
+    "lga": "Central Goldfields",
+    "facilities": 68,
+    "population": 13753,
+    "facilities_per_1k": 4.94,
+    "seifa_irsd_decile": 2,
+    "lat": -37.0072,
+    "lon": 143.7138
+  },
+  {
+    "lga": "Colac Otway",
+    "facilities": 104,
+    "population": 22209,
+    "facilities_per_1k": 4.68,
+    "seifa_irsd_decile": 5,
+    "lat": -38.452,
+    "lon": 143.5952
+  },
+  {
+    "lga": "Corangamite",
+    "facilities": 100,
+    "population": 15712,
+    "facilities_per_1k": 6.36,
+    "seifa_irsd_decile": 6,
+    "lat": -38.2043,
+    "lon": 143.1986
+  },
+  {
+    "lga": "Darebin",
+    "facilities": 130,
+    "population": 162496,
+    "facilities_per_1k": 0.8,
+    "seifa_irsd_decile": 8,
+    "lat": -37.7335,
+    "lon": 145.0143
+  },
+  {
+    "lga": "East Gippsland",
+    "facilities": 155,
+    "population": 49669,
+    "facilities_per_1k": 3.12,
+    "seifa_irsd_decile": 4,
+    "lat": -37.378,
+    "lon": 148.2918
+  },
+  {
+    "lga": "Frankston",
+    "facilities": 117,
+    "population": 145369,
+    "facilities_per_1k": 0.8,
+    "seifa_irsd_decile": 7,
+    "lat": -38.1346,
+    "lon": 145.1738
+  },
+  {
+    "lga": "Gannawarra",
+    "facilities": 86,
+    "population": 10311,
+    "facilities_per_1k": 8.34,
+    "seifa_irsd_decile": 4,
+    "lat": -35.7516,
+    "lon": 143.8042
+  },
+  {
+    "lga": "Glen Eira",
+    "facilities": 108,
+    "population": 163025,
+    "facilities_per_1k": 0.66,
+    "seifa_irsd_decile": 10,
+    "lat": -37.9012,
+    "lon": 145.0426
+  },
+  {
+    "lga": "Glenelg",
+    "facilities": 98,
+    "population": 19908,
+    "facilities_per_1k": 4.92,
+    "seifa_irsd_decile": 4,
+    "lat": -37.8705,
+    "lon": 141.3857
+  },
+  {
+    "lga": "Golden Plains",
+    "facilities": 98,
+    "population": 26620,
+    "facilities_per_1k": 3.68,
+    "seifa_irsd_decile": 9,
+    "lat": -37.8821,
+    "lon": 143.8425
+  },
+  {
+    "lga": "Greater Bendigo",
+    "facilities": 231,
+    "population": 126568,
+    "facilities_per_1k": 1.83,
+    "seifa_irsd_decile": 6,
+    "lat": -36.7344,
+    "lon": 144.4226
+  },
+  {
+    "lga": "Greater Dandenong",
+    "facilities": 118,
+    "population": 168684,
+    "facilities_per_1k": 0.7,
+    "seifa_irsd_decile": 2,
+    "lat": -38.0056,
+    "lon": 145.19
+  },
+  {
+    "lga": "Greater Geelong",
+    "facilities": 339,
+    "population": 295052,
+    "facilities_per_1k": 1.15,
+    "seifa_irsd_decile": 8,
+    "lat": -38.069,
+    "lon": 144.4172
+  },
+  {
+    "lga": "Greater Shepparton",
+    "facilities": 177,
+    "population": 69865,
+    "facilities_per_1k": 2.53,
+    "seifa_irsd_decile": 3,
+    "lat": -36.397,
+    "lon": 145.3862
+  },
+  {
+    "lga": "Hepburn",
+    "facilities": 47,
+    "population": 17011,
+    "facilities_per_1k": 2.76,
+    "seifa_irsd_decile": 8,
+    "lat": -37.3169,
+    "lon": 144.0576
+  },
+  {
+    "lga": "Hindmarsh",
+    "facilities": 49,
+    "population": 5447,
+    "facilities_per_1k": 9.0,
+    "seifa_irsd_decile": 3,
+    "lat": -36.0515,
+    "lon": 141.7526
+  },
+  {
+    "lga": "Hobsons Bay",
+    "facilities": 117,
+    "population": 97031,
+    "facilities_per_1k": 1.21,
+    "seifa_irsd_decile": 8,
+    "lat": -37.8547,
+    "lon": 144.8298
+  },
+  {
+    "lga": "Horsham",
+    "facilities": 86,
+    "population": 20252,
+    "facilities_per_1k": 4.25,
+    "seifa_irsd_decile": 6,
+    "lat": -36.8258,
+    "lon": 142.0904
+  },
+  {
+    "lga": "Hume",
+    "facilities": 177,
+    "population": 278885,
+    "facilities_per_1k": 0.63,
+    "seifa_irsd_decile": 3,
+    "lat": -37.5892,
+    "lon": 144.8245
+  },
+  {
+    "lga": "Indigo",
+    "facilities": 56,
+    "population": 17758,
+    "facilities_per_1k": 3.15,
+    "seifa_irsd_decile": 9,
+    "lat": -36.2255,
+    "lon": 146.7231
+  },
+  {
+    "lga": "Kingston (Vic.)",
+    "facilities": 183,
+    "population": 168061,
+    "facilities_per_1k": 1.09,
+    "seifa_irsd_decile": 9,
+    "lat": -37.9886,
+    "lon": 145.1051
+  },
+  {
+    "lga": "Knox",
+    "facilities": 206,
+    "population": 163820,
+    "facilities_per_1k": 1.26,
+    "seifa_irsd_decile": 9,
+    "lat": -37.8889,
+    "lon": 145.2587
+  },
+  {
+    "lga": "Latrobe (Vic.)",
+    "facilities": 142,
+    "population": 79112,
+    "facilities_per_1k": 1.79,
+    "seifa_irsd_decile": 3,
+    "lat": -38.2746,
+    "lon": 146.4382
+  },
+  {
+    "lga": "Loddon",
+    "facilities": 77,
+    "population": 7718,
+    "facilities_per_1k": 9.98,
+    "seifa_irsd_decile": 3,
+    "lat": -36.3639,
+    "lon": 143.8671
+  },
+  {
+    "lga": "Macedon Ranges",
+    "facilities": 120,
+    "population": 54464,
+    "facilities_per_1k": 2.2,
+    "seifa_irsd_decile": 10,
+    "lat": -37.3357,
+    "lon": 144.6166
+  },
+  {
+    "lga": "Manningham",
+    "facilities": 110,
+    "population": 132912,
+    "facilities_per_1k": 0.83,
+    "seifa_irsd_decile": 10,
+    "lat": -37.7616,
+    "lon": 145.1886
+  },
+  {
+    "lga": "Mansfield",
+    "facilities": 42,
+    "population": 10979,
+    "facilities_per_1k": 3.83,
+    "seifa_irsd_decile": 9,
+    "lat": -37.2004,
+    "lon": 146.2069
+  },
+  {
+    "lga": "Maribyrnong",
+    "facilities": 72,
+    "population": 94672,
+    "facilities_per_1k": 0.76,
+    "seifa_irsd_decile": 8,
+    "lat": -37.7953,
+    "lon": 144.8778
+  },
+  {
+    "lga": "Maroondah",
+    "facilities": 125,
+    "population": 120247,
+    "facilities_per_1k": 1.04,
+    "seifa_irsd_decile": 9,
+    "lat": -37.8049,
+    "lon": 145.2653
+  },
+  {
+    "lga": "Melbourne",
+    "facilities": 142,
+    "population": 194481,
+    "facilities_per_1k": 0.73,
+    "seifa_irsd_decile": 8,
+    "lat": -37.8105,
+    "lon": 144.9439
+  },
+  {
+    "lga": "Melton",
+    "facilities": 102,
+    "population": 231567,
+    "facilities_per_1k": 0.44,
+    "seifa_irsd_decile": 6,
+    "lat": -37.693,
+    "lon": 144.626
+  },
+  {
+    "lga": "Merri-bek",
+    "facilities": 138,
+    "population": 189108,
+    "facilities_per_1k": 0.73,
+    "seifa_irsd_decile": 8,
+    "lat": -37.7299,
+    "lon": 144.9489
+  },
+  {
+    "lga": "Mildura",
+    "facilities": 114,
+    "population": 57309,
+    "facilities_per_1k": 1.99,
+    "seifa_irsd_decile": 3,
+    "lat": -34.8692,
+    "lon": 141.6829
+  },
+  {
+    "lga": "Mitchell",
+    "facilities": 96,
+    "population": 58459,
+    "facilities_per_1k": 1.64,
+    "seifa_irsd_decile": 7,
+    "lat": -37.1376,
+    "lon": 145.0016
+  },
+  {
+    "lga": "Moira",
+    "facilities": 116,
+    "population": 30866,
+    "facilities_per_1k": 3.76,
+    "seifa_irsd_decile": 4,
+    "lat": -36.0619,
+    "lon": 145.5504
+  },
+  {
+    "lga": "Monash",
+    "facilities": 161,
+    "population": 211833,
+    "facilities_per_1k": 0.76,
+    "seifa_irsd_decile": 9,
+    "lat": -37.8971,
+    "lon": 145.144
+  },
+  {
+    "lga": "Moonee Valley",
+    "facilities": 98,
+    "population": 130501,
+    "facilities_per_1k": 0.75,
+    "seifa_irsd_decile": 9,
+    "lat": -37.7495,
+    "lon": 144.8958
+  },
+  {
+    "lga": "Moorabool",
+    "facilities": 68,
+    "population": 40472,
+    "facilities_per_1k": 1.68,
+    "seifa_irsd_decile": 8,
+    "lat": -37.6328,
+    "lon": 144.2157
+  },
+  {
+    "lga": "Mornington Peninsula",
+    "facilities": 232,
+    "population": 172217,
+    "facilities_per_1k": 1.35,
+    "seifa_irsd_decile": 9,
+    "lat": -38.3417,
+    "lon": 145.0354
+  },
+  {
+    "lga": "Mount Alexander",
+    "facilities": 87,
+    "population": 20939,
+    "facilities_per_1k": 4.15,
+    "seifa_irsd_decile": 8,
+    "lat": -37.0508,
+    "lon": 144.1929
+  },
+  {
+    "lga": "Moyne",
+    "facilities": 131,
+    "population": 17760,
+    "facilities_per_1k": 7.38,
+    "seifa_irsd_decile": 9,
+    "lat": -38.1225,
+    "lon": 142.49
+  },
+  {
+    "lga": "Murrindindi",
+    "facilities": 76,
+    "population": 15648,
+    "facilities_per_1k": 4.86,
+    "seifa_irsd_decile": 7,
+    "lat": -37.311,
+    "lon": 145.6301
+  },
+  {
+    "lga": "Nillumbik",
+    "facilities": 137,
+    "population": 63797,
+    "facilities_per_1k": 2.15,
+    "seifa_irsd_decile": 10,
+    "lat": -37.6229,
+    "lon": 145.2368
+  },
+  {
+    "lga": "Northern Grampians",
+    "facilities": 65,
+    "population": 11804,
+    "facilities_per_1k": 5.51,
+    "seifa_irsd_decile": 4,
+    "lat": -36.8445,
+    "lon": 142.9199
+  },
+  {
+    "lga": "Port Phillip",
+    "facilities": 38,
+    "population": 114434,
+    "facilities_per_1k": 0.33,
+    "seifa_irsd_decile": 10,
+    "lat": -37.8518,
+    "lon": 144.9658
+  },
+  {
+    "lga": "Pyrenees",
+    "facilities": 54,
+    "population": 7957,
+    "facilities_per_1k": 6.79,
+    "seifa_irsd_decile": 4,
+    "lat": -37.3165,
+    "lon": 143.375
+  },
+  {
+    "lga": "Queenscliffe",
+    "facilities": 17,
+    "population": 3317,
+    "facilities_per_1k": 5.13,
+    "seifa_irsd_decile": 10,
+    "lat": -38.251,
+    "lon": 144.6768
+  },
+  {
+    "lga": "South Gippsland",
+    "facilities": 152,
+    "population": 31109,
+    "facilities_per_1k": 4.89,
+    "seifa_irsd_decile": 7,
+    "lat": -38.6214,
+    "lon": 146.0759
+  },
+  {
+    "lga": "Southern Grampians",
+    "facilities": 86,
+    "population": 16483,
+    "facilities_per_1k": 5.22,
+    "seifa_irsd_decile": 7,
+    "lat": -37.5364,
+    "lon": 142.0332
+  },
+  {
+    "lga": "Stonnington",
+    "facilities": 118,
+    "population": 114789,
+    "facilities_per_1k": 1.03,
+    "seifa_irsd_decile": 10,
+    "lat": -37.858,
+    "lon": 145.0337
+  },
+  {
+    "lga": "Strathbogie",
+    "facilities": 56,
+    "population": 11839,
+    "facilities_per_1k": 4.73,
+    "seifa_irsd_decile": 6,
+    "lat": -36.7603,
+    "lon": 145.4349
+  },
+  {
+    "lga": "Surf Coast",
+    "facilities": 124,
+    "population": 40265,
+    "facilities_per_1k": 3.08,
+    "seifa_irsd_decile": 10,
+    "lat": -38.3123,
+    "lon": 144.0531
+  },
+  {
+    "lga": "Swan Hill",
+    "facilities": 74,
+    "population": 20962,
+    "facilities_per_1k": 3.53,
+    "seifa_irsd_decile": 3,
+    "lat": -35.1202,
+    "lon": 143.1255
+  },
+  {
+    "lga": "Towong",
+    "facilities": 37,
+    "population": 6158,
+    "facilities_per_1k": 6.01,
+    "seifa_irsd_decile": 7,
+    "lat": -36.3545,
+    "lon": 147.5989
+  },
+  {
+    "lga": "Wangaratta",
+    "facilities": 117,
+    "population": 30089,
+    "facilities_per_1k": 3.89,
+    "seifa_irsd_decile": 6,
+    "lat": -36.5882,
+    "lon": 146.4284
+  },
+  {
+    "lga": "Warrnambool",
+    "facilities": 39,
+    "population": 36255,
+    "facilities_per_1k": 1.08,
+    "seifa_irsd_decile": 7,
+    "lat": -38.3715,
+    "lon": 142.5118
+  },
+  {
+    "lga": "Wellington",
+    "facilities": 162,
+    "population": 46551,
+    "facilities_per_1k": 3.48,
+    "seifa_irsd_decile": 5,
+    "lat": -37.8943,
+    "lon": 146.9194
+  },
+  {
+    "lga": "West Wimmera",
+    "facilities": 49,
+    "population": 3915,
+    "facilities_per_1k": 12.52,
+    "seifa_irsd_decile": 6,
+    "lat": -36.6756,
+    "lon": 141.2794
+  },
+  {
+    "lga": "Whitehorse",
+    "facilities": 138,
+    "population": 185256,
+    "facilities_per_1k": 0.74,
+    "seifa_irsd_decile": 9,
+    "lat": -37.8302,
+    "lon": 145.1551
+  },
+  {
+    "lga": "Whittlesea",
+    "facilities": 131,
+    "population": 259759,
+    "facilities_per_1k": 0.5,
+    "seifa_irsd_decile": 6,
+    "lat": -37.5472,
+    "lon": 145.0777
+  },
+  {
+    "lga": "Wodonga",
+    "facilities": 45,
+    "population": 44717,
+    "facilities_per_1k": 1.01,
+    "seifa_irsd_decile": 5,
+    "lat": -36.1506,
+    "lon": 146.8826
+  },
+  {
+    "lga": "Wyndham",
+    "facilities": 161,
+    "population": 347830,
+    "facilities_per_1k": 0.46,
+    "seifa_irsd_decile": 8,
+    "lat": -37.8866,
+    "lon": 144.6183
+  },
+  {
+    "lga": "Yarra",
+    "facilities": 92,
+    "population": 101356,
+    "facilities_per_1k": 0.91,
+    "seifa_irsd_decile": 9,
+    "lat": -37.8023,
+    "lon": 144.9985
+  },
+  {
+    "lga": "Yarra Ranges",
+    "facilities": 197,
+    "population": 160906,
+    "facilities_per_1k": 1.22,
+    "seifa_irsd_decile": 9,
+    "lat": -37.7142,
+    "lon": 145.6969
+  },
+  {
+    "lga": "Yarriambiack",
+    "facilities": 82,
+    "population": 6295,
+    "facilities_per_1k": 13.03,
+    "seifa_irsd_decile": 3,
+    "lat": -35.9901,
+    "lon": 142.419
+  }
 ]

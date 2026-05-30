@@ -10,7 +10,8 @@
     "view": { "stroke": null }
   },
   "transform": [
-    { "calculate": "datum.participants / 1000000", "as": "participants_m" }
+    { "calculate": "datum.participants / 1000000", "as": "participants_m" },
+    { "calculate": "format(datum.participants_m, '.2f') + 'M'", "as": "label" }
   ],
   "encoding": {
     "y": {
@@ -24,7 +25,7 @@
       "field": "participants_m",
       "type": "quantitative",
       "title": "Adult participants (millions)",
-      "scale": { "domainMax": 3.9 },
+      "scale": { "domainMax": 4.3 },
       "axis": { "tickCount": 4 }
     }
   },
@@ -44,9 +45,16 @@
       }
     },
     {
-      "mark": { "type": "text", "align": "left", "dx": 12, "fontSize": 11, "color": "#46566b" },
+      "mark": { "type": "text", "align": "left", "dx": 10, "fontSize": 11, "fontWeight": 600, "color": "#46566b" },
       "encoding": {
-        "text": { "field": "participants", "type": "quantitative", "format": "~s" }
+        "text": { "field": "label", "type": "nominal" }
+      }
+    },
+    {
+      "transform": [{ "filter": "datum.sport === 'Swimming'" }],
+      "mark": { "type": "text", "align": "right", "dx": -14, "dy": -15, "fontSize": 10, "fontStyle": "italic", "fontWeight": 600, "color": "#1F5F3A" },
+      "encoding": {
+        "text": { "value": "Beats soccer + tennis + basketball combined" }
       }
     }
   ]

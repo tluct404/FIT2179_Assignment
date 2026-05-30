@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Static, client-side data-visualisation site for Monash **FIT2179 Data Visualisation 2** — a sport-
+Static, client-side data-visualisation site for Monash **FIT2179 Data Visualisation 2** - a sport-
 participation story ("How Australia Plays"). Plain `index.html` + `style.css` + one embed script;
 **Vega-Lite v5** charts loaded as external JSON specs via vega-embed (all from CDN). No build step,
 package manager, framework, or tests.
@@ -33,12 +33,12 @@ The page is a single scrollable narrative: hero → 4 chapters (cards in a `.gri
 takeaway → metadata footer. Layout is responsive CSS grid that collapses to one column ≤820px;
 `overflow-x:hidden` on `body` guarantees no horizontal scroll (a rubric hard requirement).
 
-### Data model — two real sources, combined (rubric requirement)
+### Data model - two real sources, combined (rubric requirement)
 
 - **AusPlay** (Australian Sports Commission): national rates, top sports, settings, income gap.
 - **ABS**: state/territory population (ERP Jun 2024) + physical activity by age/sex (NHS 2022) + SEIFA.
 
-All data lives in small `data/*.json` files. **No fabricated data** — the brief is strict, and the
+All data lives in small `data/*.json` files. **No fabricated data** - the brief is strict, and the
 mark is 0 for fabrication. Notably, per-state participation *rates* were not publicly retrievable, so
 the national maps deliberately use only real population (ABS) plus a clearly-labelled *derived*
 metric: estimated weekly-active people = `population × 0.66` (AusPlay's national weekly rate).
