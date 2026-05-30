@@ -4,10 +4,10 @@
   "width": "container",
   "height": 360,
   "config": {
-    "font": "Inter, sans-serif",
+    "font": "Archivo, sans-serif",
     "view": { "stroke": null },
-    "axis": { "labelColor": "#46566b", "titleColor": "#46566b", "gridColor": "#eef1ee" },
-    "legend": { "labelColor": "#46566b", "titleColor": "#46566b" }
+    "axis": { "labelColor": "#4a463c", "titleColor": "#4a463c", "gridColor": "#efe9dc" },
+    "legend": { "labelColor": "#4a463c", "titleColor": "#4a463c" }
   },
   "data": { "url": "data/vic_lga.json" },
   "transform": [
@@ -16,7 +16,7 @@
   ],
   "layer": [
     {
-      "mark": { "type": "point", "filled": true, "color": "#2E8B57", "opacity": 0.6, "stroke": "#1F5F3A", "strokeWidth": 0.5 },
+      "mark": { "type": "point", "filled": true, "color": "#2C7A52", "opacity": 0.6, "stroke": "#143C28", "strokeWidth": 0.5 },
       "encoding": {
         "x": {
           "field": "seifa_irsd_decile",
@@ -47,7 +47,7 @@
     },
     {
       "transform": [{ "regression": "facilities_per_1k", "on": "seifa_irsd_decile" }],
-      "mark": { "type": "line", "color": "#F2A900", "strokeWidth": 3 },
+      "mark": { "type": "line", "color": "#DD9A2B", "strokeWidth": 3 },
       "encoding": {
         "x": { "field": "seifa_irsd_decile", "type": "quantitative" },
         "y": { "field": "facilities_per_1k", "type": "quantitative" }

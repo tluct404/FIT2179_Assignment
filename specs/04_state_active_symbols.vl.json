@@ -4,9 +4,9 @@
   "width": "container",
   "height": 360,
   "config": {
-    "font": "Inter, sans-serif",
+    "font": "Archivo, sans-serif",
     "view": { "stroke": null },
-    "legend": { "labelColor": "#46566b", "titleColor": "#46566b" }
+    "legend": { "labelColor": "#4a463c", "titleColor": "#4a463c" }
   },
   "projection": {
     "type": "conicEqualArea",
@@ -20,14 +20,14 @@
         "url": "geo/au-states.geojson",
         "format": { "type": "json", "property": "features" }
       },
-      "mark": { "type": "geoshape", "fill": "#eef1ee", "stroke": "#cdd6cf", "strokeWidth": 0.8 }
+      "mark": { "type": "geoshape", "fill": "#efe9dc", "stroke": "#d8d2c2", "strokeWidth": 0.8 }
     },
     {
       "data": { "url": "data/state_population.json" },
       "transform": [
         { "calculate": "datum.est_active >= 4000000 ? 'Over 4 million' : (datum.est_active >= 1000000 ? '1 to 4 million' : 'Under 1 million')", "as": "size_band" }
       ],
-      "mark": { "type": "circle", "color": "#2E8B57", "opacity": 0.8, "stroke": "#1F5F3A", "strokeWidth": 1 },
+      "mark": { "type": "circle", "color": "#2C7A52", "opacity": 0.8, "stroke": "#143C28", "strokeWidth": 1 },
       "encoding": {
         "longitude": { "field": "lon", "type": "quantitative" },
         "latitude": { "field": "lat", "type": "quantitative" },
@@ -54,6 +54,15 @@
         "longitude": { "field": "lon", "type": "quantitative" },
         "latitude": { "field": "lat", "type": "quantitative" },
         "text": { "field": "abbr", "type": "nominal" }
+      }
+    },
+    {
+      "data": { "values": [{ "lon": 133, "lat": -40.5 }] },
+      "mark": { "type": "text", "fontSize": 11, "fontStyle": "italic", "fontWeight": 600, "color": "#4a463c", "lineBreak": "|" },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "text": { "value": "Most active adults live|in the populous south-east" }
       }
     }
   ]

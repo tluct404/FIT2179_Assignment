@@ -5,9 +5,9 @@
   "height": 260,
   "data": { "sequence": { "start": 0, "stop": 100, "step": 1, "as": "i" } },
   "config": {
-    "font": "Inter, sans-serif",
+    "font": "Archivo, sans-serif",
     "view": { "stroke": null },
-    "legend": { "orient": "bottom", "labelColor": "#46566b", "title": null, "labelLimit": 320 }
+    "legend": { "orient": "bottom", "labelColor": "#4a463c", "title": null, "labelLimit": 320 }
   },
   "transform": [
     { "calculate": "floor(datum.i / 10)", "as": "row" },
@@ -23,7 +23,7 @@
       "type": "nominal",
       "scale": {
         "domain": ["Skips strength activity", "Does strength activity"],
-        "range": ["#d7ddd8", "#2E8B57"]
+        "range": ["#e2ddcf", "#2C7A52"]
       }
     },
     "tooltip": null

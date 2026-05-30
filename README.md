@@ -4,7 +4,7 @@ An interactive, single-page data-visualisation story about how Australia plays s
 **who** is active, **where**, in **what**, and how activity changes across a lifetime.
 Built with **Vega-Lite** for Monash **FIT2179 Data Visualisation 2** (Semester 1, 2026).
 
-- **Author:** tluct404 *(replace with your full name before submitting)*
+- **Author:** Timothy Lucas Tong  ·  **GitHub:** tluct404
 - **Created:** May 2026
 - **Live site:** https://tluct404.github.io/FIT2179_Assignment/ *(after you enable GitHub Pages - see below)*
 
@@ -34,6 +34,7 @@ browsed directly on GitHub.
 | Source | Used for | Link |
 | --- | --- | --- |
 | **AusPlay** (Australian Sports Commission) | National participation rates, top sports, settings, income gap | https://www.clearinghouseforsport.gov.au/research/ausplay/results |
+| **Sport and Recreational Facilities List** (Victorian Government open data) | Per-council facility counts (VIC choropleth, scatter, beeswarm) | https://discover.data.vic.gov.au/dataset/sport-and-recreational-facilities-list |
 | **ABS - State & territory population** (Jun 2024) | Population maps + derived "estimated active people" | https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/jun-2024 |
 | **ABS - Physical activity** (National Health Survey 2022) | Meeting the guidelines by age and sex; the muscle-strengthening gap | https://www.abs.gov.au/statistics/health/health-conditions-and-risks/physical-activity/latest-release |
 | **ABS - SEIFA 2021** | Victorian socio-economic disadvantage (advantage-vs-access scatter) | https://www.abs.gov.au/statistics/people/people-and-communities/socio-economic-indexes-areas-seifa-australia/latest-release |
@@ -81,12 +82,13 @@ The site appears at `https://tluct404.github.io/FIT2179_Assignment/` within a mi
 
 - [x] **Victorian data filled.** `data/vic_lga.json` now includes `seifa_irsd_decile`, `lat` and `lon`,
       so the VIC choropleth (06), bubble scatter (07) and beeswarm (08) all render.
-- [ ] **Confirm/cite the Victorian facilities dataset** source in this README (the facility counts in
-      `data/vic_lga.json` came from your earlier file - add its original source URL).
-- [ ] **Replace `tluct404`** with your full name in `index.html`, `README.md` and chart bylines.
+- [x] **Victorian facilities dataset cited** - Sport and Recreational Facilities List (Victorian
+      Government open data): https://discover.data.vic.gov.au/dataset/sport-and-recreational-facilities-list
+- [x] **Author named** - Timothy Lucas Tong (GitHub handle tluct404 kept in URLs).
 - [ ] **Add your hand-drawn sketch** as `sketch/sketch.pdf` (≥ 4 clearly labelled sections) and link
       its GitHub URL on Moodle. *(The sketch is worth 2% and must be hand-drawn, not digital.)*
 - [ ] **Verify the live URL** loads, no chart 404s, and every `specs/*.json` is publicly browsable.
+- [ ] **(Recommended) Update figures to the AusPlay 2025 release** (published 30 Apr 2026) for "most recent data".
 
 ## Acknowledgement of AI use
 

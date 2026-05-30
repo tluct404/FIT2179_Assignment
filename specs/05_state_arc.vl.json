@@ -5,9 +5,9 @@
   "height": 360,
   "data": { "url": "data/state_population.json" },
   "config": {
-    "font": "Inter, sans-serif",
+    "font": "Archivo, sans-serif",
     "view": { "stroke": null },
-    "legend": { "labelColor": "#46566b", "titleColor": "#46566b" }
+    "legend": { "labelColor": "#4a463c", "titleColor": "#4a463c" }
   },
   "layer": [
     {
@@ -20,7 +20,7 @@
           "type": "nominal",
           "sort": { "field": "population", "order": "descending" },
           "title": "State / Territory",
-          "scale": { "range": ["#1F5F3A", "#2E8B57", "#5aa97c", "#8fce9f", "#F2A900", "#f6c14b", "#cdb86a", "#9aa7a0"] }
+          "scale": { "range": ["#143C28", "#2C7A52", "#5aa97c", "#8fce9f", "#DD9A2B", "#f6c14b", "#cdb86a", "#9aa7a0"] }
         },
         "tooltip": [
           { "field": "state", "type": "nominal", "title": "State / Territory" },
@@ -39,12 +39,12 @@
         "theta": { "field": "population", "type": "quantitative", "stack": true },
         "order": { "field": "population", "sort": "descending" },
         "text": { "field": "pctlabel", "type": "nominal" },
-        "color": { "value": "#46566b" }
+        "color": { "value": "#4a463c" }
       }
     },
     {
       "data": { "values": [{ "line1": "NSW + VIC", "line2": "= 57%" }] },
-      "mark": { "type": "text", "fontSize": 15, "fontWeight": 800, "color": "#1F5F3A", "lineBreak": "|" },
+      "mark": { "type": "text", "fontSize": 15, "fontWeight": 800, "color": "#143C28", "lineBreak": "|" },
       "encoding": { "text": { "value": ["NSW + VIC", "= 57% of", "the nation"] } }
     }
   ]

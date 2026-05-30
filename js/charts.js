@@ -32,7 +32,7 @@ charts.forEach(([id, spec]) => {
   vegaEmbed('#' + id, spec, embedOptions).catch((err) => {
     console.error('Failed to render', spec, err);
     el.innerHTML =
-      '<p style="color:#8a6400;background:#fff7e6;border:1px dashed #F2A900;' +
+      '<p style="color:#8a6400;background:#fff7e6;border:1px dashed #DD9A2B;' +
       'border-radius:8px;padding:12px 14px;font-size:0.9rem;margin:0;">' +
       'This chart could not load. If you are viewing the file locally, serve it over ' +
       'HTTP (charts fetch JSON, which browsers block on <code>file://</code>). ' +

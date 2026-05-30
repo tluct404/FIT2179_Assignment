@@ -5,8 +5,8 @@
   "height": 360,
   "data": { "url": "data/top_sports.json" },
   "config": {
-    "font": "Inter, sans-serif",
-    "axis": { "labelColor": "#46566b", "titleColor": "#46566b", "grid": false },
+    "font": "Archivo, sans-serif",
+    "axis": { "labelColor": "#4a463c", "titleColor": "#4a463c", "grid": false },
     "view": { "stroke": null }
   },
   "transform": [
@@ -31,11 +31,11 @@
   },
   "layer": [
     {
-      "mark": { "type": "rule", "color": "#cdd6cf", "strokeWidth": 2 },
+      "mark": { "type": "rule", "color": "#d8d2c2", "strokeWidth": 2 },
       "encoding": { "x2": { "datum": 0 } }
     },
     {
-      "mark": { "type": "circle", "size": 230, "color": "#2E8B57", "opacity": 1 },
+      "mark": { "type": "circle", "size": 230, "color": "#2C7A52", "opacity": 1 },
       "encoding": {
         "tooltip": [
           { "field": "sport", "type": "nominal", "title": "Sport" },
@@ -45,14 +45,14 @@
       }
     },
     {
-      "mark": { "type": "text", "align": "left", "dx": 10, "fontSize": 11, "fontWeight": 600, "color": "#46566b" },
+      "mark": { "type": "text", "align": "left", "dx": 10, "fontSize": 11, "fontWeight": 600, "color": "#4a463c" },
       "encoding": {
         "text": { "field": "label", "type": "nominal" }
       }
     },
     {
       "transform": [{ "filter": "datum.sport === 'Swimming'" }],
-      "mark": { "type": "text", "align": "right", "dx": -14, "dy": -15, "fontSize": 10, "fontStyle": "italic", "fontWeight": 600, "color": "#1F5F3A" },
+      "mark": { "type": "text", "align": "right", "dx": -14, "dy": -15, "fontSize": 10, "fontStyle": "italic", "fontWeight": 600, "color": "#143C28" },
       "encoding": {
         "text": { "value": "Beats soccer + tennis + basketball combined" }
       }

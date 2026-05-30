@@ -4,10 +4,10 @@
   "width": "container",
   "height": 170,
   "config": {
-    "font": "Inter, sans-serif",
-    "axis": { "labelColor": "#46566b", "titleColor": "#46566b" },
+    "font": "Archivo, sans-serif",
+    "axis": { "labelColor": "#4a463c", "titleColor": "#4a463c" },
     "view": { "stroke": null },
-    "legend": { "orient": "bottom", "labelColor": "#46566b", "title": null }
+    "legend": { "orient": "bottom", "labelColor": "#4a463c", "title": null }
   },
   "data": { "url": "data/participation_by_income.json" },
   "transform": [{ "calculate": "'Adults'", "as": "row" }],
@@ -18,7 +18,7 @@
       "type": "quantitative",
       "title": "Participate in sport or physical activity (%)",
       "scale": { "domain": [70, 100] },
-      "axis": { "grid": true, "gridColor": "#eef1ee" }
+      "axis": { "grid": true, "gridColor": "#efe9dc" }
     }
     
   },
@@ -30,7 +30,7 @@
             { "op": "max", "field": "participation", "as": "x2" }
           ], "groupby": ["row"] }
       ],
-      "mark": { "type": "rule", "strokeWidth": 3, "color": "#cdd6cf" },
+      "mark": { "type": "rule", "strokeWidth": 3, "color": "#d8d2c2" },
       "encoding": {
         "x": { "field": "x", "type": "quantitative" },
         "x2": { "field": "x2" }
@@ -43,7 +43,7 @@
           "field": "income_band",
           "type": "nominal",
           "sort": { "field": "order" },
-          "scale": { "range": ["#F2A900", "#2E8B57"] }
+          "scale": { "range": ["#DD9A2B", "#2C7A52"] }
         },
         "tooltip": [
           { "field": "income_band", "type": "nominal", "title": "Household income" },
@@ -52,12 +52,12 @@
       }
     },
     {
-      "mark": { "type": "text", "dy": -20, "fontWeight": 700, "fontSize": 12, "color": "#46566b" },
+      "mark": { "type": "text", "dy": -20, "fontWeight": 700, "fontSize": 12, "color": "#4a463c" },
       "encoding": { "text": { "field": "participation", "type": "quantitative", "format": ".0f" } }
     },
     {
       "data": { "values": [{ "mid": 86.5, "row": "Adults", "lbl": "15% difference" }] },
-      "mark": { "type": "text", "dy": -42, "fontWeight": 800, "fontSize": 12, "color": "#1F5F3A" },
+      "mark": { "type": "text", "dy": -42, "fontWeight": 800, "fontSize": 12, "color": "#143C28" },
       "encoding": {
         "x": { "field": "mid", "type": "quantitative" },
         "y": { "field": "row", "type": "nominal" },

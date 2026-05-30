@@ -5,10 +5,10 @@
   "height": 360,
   "data": { "url": "data/where_active.json" },
   "config": {
-    "font": "Inter, sans-serif",
-    "axis": { "labelColor": "#46566b", "titleColor": "#46566b" },
+    "font": "Archivo, sans-serif",
+    "axis": { "labelColor": "#4a463c", "titleColor": "#4a463c" },
     "view": { "stroke": null },
-    "legend": { "labelColor": "#46566b", "titleColor": "#46566b" }
+    "legend": { "labelColor": "#4a463c", "titleColor": "#4a463c" }
   },
   "encoding": {
     "y": {
@@ -23,13 +23,13 @@
       "type": "quantitative",
       "title": "Share of active adults (%)",
       "scale": { "domain": [0, 100] },
-      "axis": { "grid": true, "gridColor": "#eef1ee" }
+      "axis": { "grid": true, "gridColor": "#efe9dc" }
     },
     "color": {
       "field": "kind",
       "type": "nominal",
       "title": "Setting type",
-      "scale": { "domain": ["Informal", "Organised"], "range": ["#F2A900", "#2E8B57"] }
+      "scale": { "domain": ["Informal", "Organised"], "range": ["#DD9A2B", "#2C7A52"] }
     }
   },
   "layer": [
@@ -43,7 +43,7 @@
       }
     },
     {
-      "mark": { "type": "text", "align": "left", "dx": 6, "fontWeight": 700, "color": "#46566b" },
+      "mark": { "type": "text", "align": "left", "dx": 6, "fontWeight": 700, "color": "#4a463c" },
       "encoding": { "text": { "field": "share", "type": "quantitative", "format": ".0f" } }
     }
   ]

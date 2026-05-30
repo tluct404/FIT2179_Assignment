@@ -5,31 +5,35 @@
   "height": 360,
   "data": { "url": "data/vic_lga.json" },
   "config": {
-    "font": "Inter, sans-serif",
+    "font": "Archivo, sans-serif",
     "view": { "stroke": null },
-    "axis": { "labelColor": "#46566b", "titleColor": "#46566b" },
-    "legend": { "labelColor": "#46566b", "titleColor": "#46566b" }
+    "axis": { "labelColor": "#4a463c", "titleColor": "#4a463c" },
+    "legend": { "labelColor": "#4a463c", "titleColor": "#4a463c" }
   },
-  "transform": [{ "calculate": "random()", "as": "jitter" }],
+  "transform": [
+    { "calculate": "random()", "as": "jitter" },
+    { "calculate": "datum.population >= 200000 ? 'Over 200k' : (datum.population >= 50000 ? '50k to 200k' : 'Under 50k')", "as": "pop_band" }
+  ],
   "layer": [
     {
-      "mark": { "type": "circle", "opacity": 0.65, "stroke": "#1F5F3A", "strokeWidth": 0.4 },
+      "mark": { "type": "circle", "opacity": 0.65, "stroke": "#143C28", "strokeWidth": 0.4 },
       "encoding": {
         "x": {
           "field": "facilities_per_1k",
           "type": "quantitative",
           "title": "Facilities per 1,000 people  →  better per-person access",
-          "axis": { "grid": true, "gridColor": "#eef1ee" }
+          "axis": { "grid": true, "gridColor": "#efe9dc" }
         },
         "y": { "field": "jitter", "type": "quantitative", "axis": null, "scale": { "domain": [-0.05, 1.05] } },
         "size": {
-          "field": "population",
-          "type": "quantitative",
+          "field": "pop_band",
+          "type": "ordinal",
           "title": "Population",
-          "scale": { "range": [20, 700] },
-          "legend": { "format": "~s" }
+          "sort": ["Under 50k", "50k to 200k", "Over 200k"],
+          "scale": { "domain": ["Under 50k", "50k to 200k", "Over 200k"], "range": [60, 280, 700] },
+          "legend": null
         },
-        "color": { "value": "#2E8B57" },
+        "color": { "value": "#2C7A52" },
         "tooltip": [
           { "field": "lga", "type": "nominal", "title": "Council" },
           { "field": "facilities_per_1k", "type": "quantitative", "title": "Facilities per 1,000" },
@@ -39,7 +43,7 @@
     },
     {
       "transform": [{ "filter": "datum.facilities_per_1k >= 12" }],
-      "mark": { "type": "text", "align": "center", "dy": -14, "fontSize": 10, "fontWeight": 700, "color": "#1F5F3A" },
+      "mark": { "type": "text", "align": "center", "dy": -14, "fontSize": 10, "fontWeight": 700, "color": "#143C28" },
       "encoding": {
         "x": { "field": "facilities_per_1k", "type": "quantitative" },
         "y": { "field": "jitter", "type": "quantitative" },

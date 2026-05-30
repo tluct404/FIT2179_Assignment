@@ -1,33 +1,44 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Line chart of the percentage of Australians meeting the physical activity guidelines across age groups. Position on a common scale lets the reader trace the trend: a steady decline through working age to a midlife low, then a striking rebound at 65+. Value labels and a callout annotate the story directly on the chart. Source: ABS National Health Survey 2022.",
+  "description": "Line chart of the percentage of Australians meeting the physical activity guidelines across age groups, with a dashed reference line for the 18-64 national average (22%). Position on a common scale lets the reader trace the trend: a steady decline through working age to a midlife low, then a rebound at 65+. Value labels and callouts annotate the story directly on the chart. Source: ABS National Health Survey 2022.",
   "width": "container",
   "height": 320,
   "config": {
-    "font": "Inter, sans-serif",
-    "axis": { "labelColor": "#46566b", "titleColor": "#46566b", "gridColor": "#eef1ee" },
+    "font": "Archivo, sans-serif",
+    "axis": { "labelColor": "#4a463c", "titleColor": "#4a463c", "gridColor": "#efe9dc" },
     "view": { "stroke": null }
   },
   "data": { "url": "data/activity_by_age.json" },
-  "encoding": {
-    "x": {
-      "field": "age_group",
-      "type": "nominal",
-      "sort": { "field": "order" },
-      "title": "Age group",
-      "axis": { "labelAngle": 0, "labelFontWeight": 600 }
-    },
-    "y": {
-      "field": "met_guideline",
-      "type": "quantitative",
-      "title": "Meeting activity guidelines (%)",
-      "scale": { "domain": [0, 40] }
-    }
-  },
   "layer": [
     {
-      "mark": { "type": "line", "color": "#2E8B57", "strokeWidth": 3, "point": { "filled": true, "color": "#1F5F3A", "size": 90 } },
+      "mark": { "type": "rule", "color": "#9a937f", "strokeDash": [4, 3], "strokeWidth": 1.5 },
+      "encoding": { "y": { "datum": 22.4, "type": "quantitative" } }
+    },
+    {
+      "data": { "values": [{ "age_group": "18–24" }] },
+      "mark": { "type": "text", "align": "left", "dx": 2, "dy": -6, "fontSize": 10, "fontWeight": 600, "color": "#6f6a5e" },
       "encoding": {
+        "x": { "field": "age_group", "type": "nominal", "sort": { "field": "order" } },
+        "y": { "datum": 22.4, "type": "quantitative" },
+        "text": { "value": "All adults 18-64 average: 22%" }
+      }
+    },
+    {
+      "mark": { "type": "line", "color": "#2C7A52", "strokeWidth": 3, "point": { "filled": true, "color": "#143C28", "size": 90 } },
+      "encoding": {
+        "x": {
+          "field": "age_group",
+          "type": "nominal",
+          "sort": { "field": "order" },
+          "title": "Age group",
+          "axis": { "labelAngle": 0, "labelFontWeight": 600 }
+        },
+        "y": {
+          "field": "met_guideline",
+          "type": "quantitative",
+          "title": "Meeting activity guidelines (%)",
+          "scale": { "domain": [0, 40] }
+        },
         "tooltip": [
           { "field": "age_group", "type": "nominal", "title": "Age group" },
           { "field": "met_guideline", "type": "quantitative", "title": "Meeting guidelines (%)" }
@@ -35,12 +46,16 @@
       }
     },
     {
-      "mark": { "type": "text", "dy": -14, "fontWeight": 700, "color": "#1F5F3A", "fontSize": 11 },
-      "encoding": { "text": { "field": "met_guideline", "type": "quantitative", "format": ".1f" } }
+      "mark": { "type": "text", "dy": -14, "fontWeight": 700, "color": "#143C28", "fontSize": 11 },
+      "encoding": {
+        "x": { "field": "age_group", "type": "nominal", "sort": { "field": "order" } },
+        "y": { "field": "met_guideline", "type": "quantitative" },
+        "text": { "field": "met_guideline", "type": "quantitative", "format": ".1f" }
+      }
     },
     {
       "data": { "values": [{ "age_group": "55–64", "met_guideline": 16.1, "note": "Midlife low" }] },
-      "mark": { "type": "text", "dy": 22, "fontStyle": "italic", "color": "#c44", "fontSize": 11, "fontWeight": 600 },
+      "mark": { "type": "text", "dy": 22, "fontStyle": "italic", "color": "#c0492f", "fontSize": 11, "fontWeight": 600 },
       "encoding": {
         "x": { "field": "age_group", "type": "nominal", "sort": { "field": "order" } },
         "y": { "field": "met_guideline", "type": "quantitative" },
@@ -49,7 +64,7 @@
     },
     {
       "data": { "values": [{ "age_group": "65+", "met_guideline": 33.4, "note": "Rebounds after retirement" }] },
-      "mark": { "type": "text", "dy": -28, "align": "right", "fontStyle": "italic", "color": "#F2A900", "fontSize": 11, "fontWeight": 700 },
+      "mark": { "type": "text", "dy": -28, "align": "right", "fontStyle": "italic", "color": "#DD9A2B", "fontSize": 11, "fontWeight": 700 },
       "encoding": {
         "x": { "field": "age_group", "type": "nominal", "sort": { "field": "order" } },
         "y": { "field": "met_guideline", "type": "quantitative" },

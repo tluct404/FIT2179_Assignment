@@ -4,9 +4,9 @@
   "width": "container",
   "height": 440,
   "config": {
-    "font": "Inter, sans-serif",
+    "font": "Archivo, sans-serif",
     "view": { "stroke": null },
-    "legend": { "labelColor": "#46566b", "titleColor": "#46566b" }
+    "legend": { "labelColor": "#4a463c", "titleColor": "#4a463c" }
   },
   "projection": { "type": "mercator" },
   "data": {
