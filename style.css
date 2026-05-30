@@ -1,0 +1,267 @@
+/* ============================================================
+   How Australia Plays — stylesheet
+   Palette: turf green + Australian gold on a soft off-white.
+   Type ramp: Anton (hero) / Poppins (headings) / Inter (body).
+   ============================================================ */
+
+:root {
+  --green-dark: #1F5F3A;
+  --green: #2E8B57;
+  --green-soft: #e7efe9;
+  --gold: #F2A900;
+  --ink: #21304a;
+  --muted: #5d6d7e;
+  --line: #e4e9e5;
+  --bg: #f6f8f6;
+  --card: #ffffff;
+  --maxw: 1160px;
+  --radius: 12px;
+  --shadow: 0 6px 22px rgba(31, 95, 58, 0.07);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* guarantee: no horizontal scrolling */
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background:
+    radial-gradient(1200px 400px at 70% -10%, rgba(242, 169, 0, 0.18), transparent 60%),
+    linear-gradient(160deg, var(--green-dark) 0%, var(--green) 100%);
+  color: #fff;
+  padding: 84px 0 64px;
+  border-bottom: 6px solid var(--gold);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 14px;
+}
+
+.hero h1 {
+  font-family: 'Anton', 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+}
+
+.hero-sub {
+  max-width: 60ch;
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0 0 22px;
+}
+
+.byline {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 28px;
+}
+
+.scroll-hint {
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ---------- Intro ---------- */
+.intro {
+  margin: 56px 0 12px;
+}
+.intro p {
+  max-width: 68ch;
+  font-size: 1.18rem;
+  color: #34435a;
+}
+
+/* ---------- Chapters ---------- */
+.chapter { margin: 56px 0; }
+
+.chapter-head {
+  border-top: 2px solid var(--line);
+  padding-top: 22px;
+  margin-bottom: 26px;
+}
+
+.chapter-num {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.1rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+}
+
+.chapter-head h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  line-height: 1.1;
+  margin: 6px 0 10px;
+  color: var(--green-dark);
+}
+
+.chapter-lead {
+  max-width: 70ch;
+  color: var(--muted);
+  font-size: 1.06rem;
+  margin: 0;
+}
+
+/* ---------- Grid & cards ---------- */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+  align-items: stretch; /* equal-height cards keep sight lines */
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 26px;
+}
+
+.card.full { margin-bottom: 26px; }
+
+.card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.18rem;
+  color: var(--ink);
+  margin: 0 0 4px;
+}
+
+/* visualisation mount points */
+.vis {
+  width: 100%;
+  margin: 10px 0 6px;
+  min-height: 60px;
+}
+.vis-wide { overflow-x: auto; } /* the linked map+bar is wider; scrolls only within its own card on tiny screens */
+
+.insight {
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: #46566b;
+  margin: 8px 0 0;
+  border-left: 3px solid var(--green-soft);
+  padding-left: 14px;
+}
+
+.insight .note {
+  display: inline;
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+code {
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-size: 0.86em;
+  background: var(--green-soft);
+  color: var(--green-dark);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+/* ---------- Takeaway ---------- */
+.takeaway {
+  background: linear-gradient(160deg, var(--green-dark), var(--green));
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 40px 36px;
+  margin: 56px 0;
+}
+.takeaway h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0 0 12px;
+}
+.takeaway p {
+  max-width: 72ch;
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.94);
+  margin: 0;
+}
+.takeaway strong { color: var(--gold); }
+
+/* ---------- Metadata / footer ---------- */
+.meta {
+  border-top: 2px solid var(--line);
+  padding: 36px 0 80px;
+  color: var(--muted);
+}
+.meta-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+}
+.meta h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: var(--green-dark);
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.meta p { font-size: 0.94rem; margin: 0 0 10px; }
+.meta strong { color: var(--ink); }
+
+.sources { list-style: none; padding: 0; margin: 0; font-size: 0.9rem; }
+.sources li { margin-bottom: 10px; line-height: 1.45; }
+.meta a { color: var(--green); word-break: break-word; }
+.meta a:hover { color: var(--gold); }
+
+.meta-foot {
+  border-top: 1px solid var(--line);
+  margin-top: 28px;
+  padding-top: 20px;
+  font-size: 0.88rem;
+}
+.ai-ack { color: var(--muted); }
+.verify-note {
+  background: #fff7e6;
+  border: 1px dashed var(--gold);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #8a6400;
+}
+
+/* ---------- Responsive: collapse to single column, no horizontal scroll ---------- */
+@media (max-width: 820px) {
+  .grid-2 { grid-template-columns: 1fr; }
+  .meta-grid { grid-template-columns: 1fr; gap: 24px; }
+  body { font-size: 16px; }
+  .hero { padding: 60px 0 44px; }
+}

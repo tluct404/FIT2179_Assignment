@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Victoria zoom-in: choropleth of sport & recreation facilities per 1,000 residents by Local Government Area (a DERIVED per-capita rate = facilities / population x 1000). Reveals that rural LGAs are far better supplied per person than fast-growing metro LGAs. Requires geo/LGA_2023_VIC_GDA2020.json (TopoJSON, feature LGA_2023_AUST_GDA2020). Sources: Victorian sport facilities dataset + ABS population (see README).",
+  "width": "container",
+  "height": 380,
+  "config": {
+    "font": "Inter, sans-serif",
+    "view": { "stroke": null },
+    "legend": { "labelColor": "#46566b", "titleColor": "#46566b" }
+  },
+  "projection": { "type": "mercator" },
+  "data": {
+    "url": "geo/LGA_2023_VIC_GDA2020.json",
+    "format": { "type": "topojson", "feature": "LGA_2023_AUST_GDA2020" }
+  },
+  "transform": [
+    {
+      "lookup": "properties.LGA_NAME23",
+      "from": {
+        "data": { "url": "data/vic_lga.json" },
+        "key": "lga",
+        "fields": ["facilities", "population", "facilities_per_1k"]
+      }
+    }
+  ],
+  "mark": { "type": "geoshape", "stroke": "#ffffff", "strokeWidth": 0.5 },
+  "encoding": {
+    "color": {
+      "field": "facilities_per_1k",
+      "type": "quantitative",
+      "title": "Facilities per 1,000 people",
+      "scale": { "scheme": "greens" }
+    },
+    "tooltip": [
+      { "field": "properties.LGA_NAME23", "type": "nominal", "title": "LGA" },
+      { "field": "facilities", "type": "quantitative", "title": "Facilities", "format": "," },
+      { "field": "population", "type": "quantitative", "title": "Population", "format": "," },
+      { "field": "facilities_per_1k", "type": "quantitative", "title": "Per 1,000 people" }
+    ]
+  }
+}

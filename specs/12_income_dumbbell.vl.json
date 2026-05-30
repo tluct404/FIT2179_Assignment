@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Dumbbell (connected dot) plot of the income gap in sport participation. A connecting rule spans from lower-income to higher-income households, with a labelled dot at each end, making the 15-point gap the visual focus while keeping a very high data-ink ratio. Source: AusPlay (Australian Sports Commission).",
+  "width": "container",
+  "height": 130,
+  "config": {
+    "font": "Inter, sans-serif",
+    "axis": { "labelColor": "#46566b", "titleColor": "#46566b" },
+    "view": { "stroke": null },
+    "legend": { "orient": "bottom", "labelColor": "#46566b", "title": null }
+  },
+  "data": { "url": "data/participation_by_income.json" },
+  "transform": [{ "calculate": "'Adults'", "as": "row" }],
+  "encoding": {
+    "y": { "field": "row", "type": "nominal", "title": null, "axis": { "labels": false, "ticks": false, "domain": false } },
+    "x": {
+      "field": "participation",
+      "type": "quantitative",
+      "title": "Participate in sport or physical activity (%)",
+      "scale": { "domain": [70, 100] },
+      "axis": { "grid": true, "gridColor": "#eef1ee" }
+    }
+    
+  },
+  "layer": [
+    {
+      "transform": [
+        { "aggregate": [
+            { "op": "min", "field": "participation", "as": "x" },
+            { "op": "max", "field": "participation", "as": "x2" }
+          ], "groupby": ["row"] }
+      ],
+      "mark": { "type": "rule", "strokeWidth": 3, "color": "#cdd6cf" },
+      "encoding": {
+        "x": { "field": "x", "type": "quantitative" },
+        "x2": { "field": "x2" }
+      }
+    },
+    {
+      "mark": { "type": "point", "filled": true, "size": 380, "opacity": 1, "stroke": "#ffffff", "strokeWidth": 1.5 },
+      "encoding": {
+        "color": {
+          "field": "income_band",
+          "type": "nominal",
+          "sort": { "field": "order" },
+          "scale": { "range": ["#F2A900", "#2E8B57"] }
+        },
+        "tooltip": [
+          { "field": "income_band", "type": "nominal", "title": "Household income" },
+          { "field": "participation", "type": "quantitative", "title": "Participation (%)" }
+        ]
+      }
+    },
+    {
+      "mark": { "type": "text", "dy": -20, "fontWeight": 700, "fontSize": 12, "color": "#46566b" },
+      "encoding": { "text": { "field": "participation", "type": "quantitative", "format": ".0f" } }
+    }
+  ]
+}

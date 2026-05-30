@@ -1,0 +1,12 @@
+[
+  { "sport": "Swimming",     "participants": 3483472, "rank": 1 },
+  { "sport": "Soccer",       "participants": 1273027, "rank": 2 },
+  { "sport": "Tennis",       "participants": 1118407, "rank": 3 },
+  { "sport": "Basketball",   "participants": 1024360, "rank": 4 },
+  { "sport": "Cricket",      "participants": 563967,  "rank": 5 },
+  { "sport": "AFL",          "participants": 547129,  "rank": 6 },
+  { "sport": "Netball",      "participants": 476973,  "rank": 7 },
+  { "sport": "Badminton",    "participants": 426925,  "rank": 8 },
+  { "sport": "Rugby League", "participants": 172717,  "rank": 9 },
+  { "sport": "Rugby Union",  "participants": 84648,   "rank": 10 }
+]

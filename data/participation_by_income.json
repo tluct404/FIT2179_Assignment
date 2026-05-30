@@ -1,0 +1,4 @@
+[
+  { "income_band": "Under $70k household income", "participation": 79, "order": 1 },
+  { "income_band": "Over $200k household income",  "participation": 94, "order": 2 }
+]

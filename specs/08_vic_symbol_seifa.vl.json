@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Victoria proportional-symbol map: each LGA is a circle sized by total facilities and coloured by its SEIFA index of relative socio-economic disadvantage (decile 1 = most disadvantaged, 10 = least). Click a decile in the legend to filter; click empty space to reset. Asks whether facilities track community need. Requires lat/lon and seifa_irsd_decile in data/vic_lga.json plus geo/LGA_2023_VIC_GDA2020.json. Sources: Victorian sport facilities dataset + ABS SEIFA 2021 (see README).",
+  "width": "container",
+  "height": 380,
+  "config": {
+    "font": "Inter, sans-serif",
+    "view": { "stroke": null },
+    "legend": { "labelColor": "#46566b", "titleColor": "#46566b" }
+  },
+  "projection": { "type": "mercator" },
+  "params": [
+    {
+      "name": "seifaSel",
+      "select": { "type": "point", "fields": ["seifa_irsd_decile"] },
+      "bind": "legend"
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "geo/LGA_2023_VIC_GDA2020.json",
+        "format": { "type": "topojson", "feature": "LGA_2023_AUST_GDA2020" }
+      },
+      "mark": { "type": "geoshape", "fill": "#eef1ee", "stroke": "#cdd6cf", "strokeWidth": 0.5 }
+    },
+    {
+      "data": { "url": "data/vic_lga.json" },
+      "transform": [{ "filter": "datum.lat !== null && datum.lon !== null" }],
+      "mark": { "type": "circle", "opacity": 0.8, "stroke": "#ffffff", "strokeWidth": 0.4 },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "size": {
+          "field": "facilities",
+          "type": "quantitative",
+          "title": "Total facilities",
+          "scale": { "range": [20, 900] }
+        },
+        "color": {
+          "field": "seifa_irsd_decile",
+          "type": "ordinal",
+          "title": "SEIFA decile",
+          "scale": { "scheme": "viridis" }
+        },
+        "opacity": {
+          "condition": { "param": "seifaSel", "value": 0.85 },
+          "value": 0.12
+        },
+        "tooltip": [
+          { "field": "lga", "type": "nominal", "title": "LGA" },
+          { "field": "facilities", "type": "quantitative", "title": "Facilities", "format": "," },
+          { "field": "seifa_irsd_decile", "type": "ordinal", "title": "SEIFA decile" }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+[
+  { "age_group": "18–24", "met_guideline": 31.3, "order": 1 },
+  { "age_group": "25–34", "met_guideline": 27.2, "order": 2 },
+  { "age_group": "35–44", "met_guideline": 21.7, "order": 3 },
+  { "age_group": "45–54", "met_guideline": 17.7, "order": 4 },
+  { "age_group": "55–64", "met_guideline": 16.1, "order": 5 },
+  { "age_group": "65+",        "met_guideline": 33.4, "order": 6 }
+]

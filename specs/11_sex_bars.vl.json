@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Men vs women meeting the physical activity guidelines. Two bars on a common length scale make the five-percentage-point gap easy to read at a glance. Hue distinguishes the groups. Source: ABS National Health Survey 2022 (adults 18-64).",
+  "width": "container",
+  "height": 180,
+  "config": {
+    "font": "Inter, sans-serif",
+    "axis": { "labelColor": "#46566b", "titleColor": "#46566b" },
+    "view": { "stroke": null },
+    "legend": null
+  },
+  "data": { "url": "data/activity_by_sex.json" },
+  "encoding": {
+    "y": { "field": "sex", "type": "nominal", "title": null, "axis": { "labelFontWeight": 700, "labelFontSize": 13 } },
+    "x": {
+      "field": "met_guideline",
+      "type": "quantitative",
+      "title": "Meeting activity guidelines (%)",
+      "scale": { "domain": [0, 30] },
+      "axis": { "grid": true, "gridColor": "#eef1ee" }
+    },
+    "color": {
+      "field": "sex",
+      "type": "nominal",
+      "scale": { "domain": ["Men", "Women"], "range": ["#2E8B57", "#F2A900"] }
+    }
+  },
+  "layer": [
+    { "mark": { "type": "bar", "height": 34, "cornerRadiusEnd": 3 },
+      "encoding": { "tooltip": [
+        { "field": "sex", "type": "nominal", "title": "Group" },
+        { "field": "met_guideline", "type": "quantitative", "title": "Meeting guidelines (%)" }
+      ] } },
+    { "mark": { "type": "text", "align": "left", "dx": 6, "fontWeight": 700, "color": "#46566b" },
+      "encoding": { "text": { "field": "met_guideline", "type": "quantitative", "format": ".1f" } } }
+  ]
+}

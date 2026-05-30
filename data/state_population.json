@@ -1,0 +1,10 @@
+[
+  { "state": "New South Wales",              "abbr": "NSW", "population": 8484400, "pct_national": 31.2, "est_active": 5599704, "lat": -32.0, "lon": 147.0 },
+  { "state": "Victoria",                     "abbr": "VIC", "population": 6981400, "pct_national": 25.7, "est_active": 4607724, "lat": -36.9, "lon": 144.3 },
+  { "state": "Queensland",                   "abbr": "QLD", "population": 5586300, "pct_national": 20.5, "est_active": 3686958, "lat": -22.5, "lon": 144.4 },
+  { "state": "Western Australia",            "abbr": "WA",  "population": 2965200, "pct_national": 10.9, "est_active": 1957032, "lat": -25.3, "lon": 122.3 },
+  { "state": "South Australia",              "abbr": "SA",  "population": 1878000, "pct_national": 6.9,  "est_active": 1239480, "lat": -30.1, "lon": 135.6 },
+  { "state": "Tasmania",                     "abbr": "TAS", "population": 575400,  "pct_national": 2.1,  "est_active": 379764,  "lat": -42.0, "lon": 146.6 },
+  { "state": "Australian Capital Territory", "abbr": "ACT", "population": 474100,  "pct_national": 1.7,  "est_active": 312906,  "lat": -35.5, "lon": 149.0 },
+  { "state": "Northern Territory",           "abbr": "NT",  "population": 255100,  "pct_national": 0.9,  "est_active": 168366,  "lat": -19.4, "lon": 133.4 }
+]

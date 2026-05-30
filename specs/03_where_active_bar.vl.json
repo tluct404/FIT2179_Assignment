@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Where Australian adults are active. Horizontal bars compare the share of participants using each setting. Categories overlap (a person can be active in several settings), so this is intentionally NOT a part-to-whole pie. Hue separates informal from organised settings. Source: AusPlay (Australian Sports Commission).",
+  "width": "container",
+  "height": 220,
+  "data": { "url": "data/where_active.json" },
+  "config": {
+    "font": "Inter, sans-serif",
+    "axis": { "labelColor": "#46566b", "titleColor": "#46566b" },
+    "view": { "stroke": null },
+    "legend": { "labelColor": "#46566b", "titleColor": "#46566b" }
+  },
+  "encoding": {
+    "y": {
+      "field": "setting",
+      "type": "nominal",
+      "sort": { "field": "share", "order": "descending" },
+      "title": null,
+      "axis": { "labelFontSize": 12, "labelLimit": 220 }
+    },
+    "x": {
+      "field": "share",
+      "type": "quantitative",
+      "title": "Share of active adults (%)",
+      "scale": { "domain": [0, 100] },
+      "axis": { "grid": true, "gridColor": "#eef1ee" }
+    },
+    "color": {
+      "field": "kind",
+      "type": "nominal",
+      "title": "Setting type",
+      "scale": { "domain": ["Informal", "Organised"], "range": ["#F2A900", "#2E8B57"] }
+    }
+  },
+  "layer": [
+    {
+      "mark": { "type": "bar", "height": 22, "cornerRadiusEnd": 3 },
+      "encoding": {
+        "tooltip": [
+          { "field": "setting", "type": "nominal", "title": "Setting" },
+          { "field": "share", "type": "quantitative", "title": "Share of adults (%)" }
+        ]
+      }
+    },
+    {
+      "mark": { "type": "text", "align": "left", "dx": 6, "fontWeight": 700, "color": "#46566b" },
+      "encoding": { "text": { "field": "share", "type": "quantitative", "format": ".0f" } }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Choropleth of adult+child resident population by Australian state and territory, using a conic equal-area projection appropriate for Australia (preserves relative area for a fair geographic comparison). Sequential green luminance encodes the ordered quantity. State labels are layered on at centroids as annotations. Sources: ABS Estimated Resident Population, June 2024 (geometry: rowanhogan/australian-states).",
+  "width": "container",
+  "height": 360,
+  "config": {
+    "font": "Inter, sans-serif",
+    "view": { "stroke": null },
+    "legend": { "labelColor": "#46566b", "titleColor": "#46566b" }
+  },
+  "projection": {
+    "type": "conicEqualArea",
+    "rotate": [-134, 0],
+    "parallels": [-18, -36],
+    "center": [0, -27]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "geo/au-states.geojson",
+        "format": { "type": "json", "property": "features" }
+      },
+      "transform": [
+        {
+          "lookup": "properties.STATE_NAME",
+          "from": {
+            "data": { "url": "data/state_population.json" },
+            "key": "state",
+            "fields": ["population", "abbr", "pct_national"]
+          }
+        }
+      ],
+      "mark": { "type": "geoshape", "stroke": "#ffffff", "strokeWidth": 1 },
+      "encoding": {
+        "color": {
+          "field": "population",
+          "type": "quantitative",
+          "title": "Residents",
+          "scale": { "scheme": "greens" },
+          "legend": { "format": "~s" }
+        },
+        "tooltip": [
+          { "field": "properties.STATE_NAME", "type": "nominal", "title": "State / Territory" },
+          { "field": "population", "type": "quantitative", "title": "Residents", "format": "," },
+          { "field": "pct_national", "type": "quantitative", "title": "Share of Australia (%)" }
+        ]
+      }
+    },
+    {
+      "data": { "url": "data/state_population.json" },
+      "mark": { "type": "text", "fontSize": 11, "fontWeight": 700, "color": "#21304a" },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "text": { "field": "abbr", "type": "nominal" }
+      }
+    }
+  ]
+}

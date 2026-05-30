@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Australia Plays — A Sport Participation Story</title>
+  <meta name="author" content="tluct404" />
+  <meta name="description"
+    content="A data-visualisation story about how Australia plays sport: who is active, where, and how it changes across life. Built with Vega-Lite for FIT2179." />
+
+  <!-- Typography: Anton (sporty display) for the hero, Poppins for headings, Inter for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Vega-Lite runtime (v5) via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+
+<body>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">FIT2179 · Data Visualisation 2 · Australian Sport</p>
+      <h1>How Australia Plays</h1>
+      <p class="hero-sub">
+        Australians love their sport — but who actually plays, where do they play it,
+        and does staying active hold up across a lifetime? This is a data story about
+        the everyday reality of sport and physical activity across the country.
+      </p>
+      <p class="byline">By <strong>tluct404</strong> · May 2026 · Data: AusPlay (Australian Sports Commission) &amp; the Australian Bureau of Statistics</p>
+      <p class="scroll-hint">Scroll to explore ↓</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ===================== INTRO ===================== -->
+    <section class="intro">
+      <p>
+        Sport shapes how Australians spend their time, money and weekends — from a Saturday
+        swim to a local footy match. Yet the headline "we are a sporting nation" hides a more
+        interesting picture: participation is uneven across <strong>activities</strong>,
+        <strong>places</strong>, <strong>ages</strong> and <strong>incomes</strong>. This page
+        walks an everyday reader through that picture in four short chapters, using real national
+        survey data combined with population statistics. No statistics background is needed — every
+        chart is annotated with the point it makes.
+      </p>
+    </section>
+
+    <!-- ===================== CHAPTER 1 ===================== -->
+    <section class="chapter">
+      <div class="chapter-head">
+        <span class="chapter-num">01</span>
+        <h2>How active are we, really?</h2>
+        <p class="chapter-lead">
+          Most Australians move at least sometimes — but the share drops sharply once we ask
+          how <em>often</em>, and most of that activity happens informally rather than at a club.
+        </p>
+      </div>
+
+      <div class="card full">
+        <h3>Activity thins out as we ask for more commitment</h3>
+        <div id="vis-kpi" class="vis"></div>
+        <p class="insight">
+          Five in six adults are active at least once a year, but only about half manage three or
+          more sessions a week. The gap between "occasionally active" and "regularly active" is
+          where most of the public-health challenge sits.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Swimming is the runaway national sport</h3>
+          <div id="vis-sports" class="vis"></div>
+          <p class="insight">
+            Swimming attracts more than three million adult participants — far ahead of soccer,
+            tennis and basketball. The most popular activities are accessible and individual,
+            not the professional team codes we watch on television.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Most of us play on our own terms</h3>
+          <div id="vis-where" class="vis"></div>
+          <p class="insight">
+            Two-thirds of active adults organise activity themselves or with friends. Clubs and
+            gyms matter, but informal, self-directed activity is the backbone of how Australia
+            stays active. <span class="note">(Settings overlap — a person can use several.)</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CHAPTER 2 ===================== -->
+    <section class="chapter">
+      <div class="chapter-head">
+        <span class="chapter-num">02</span>
+        <h2>Where the active millions are</h2>
+        <p class="chapter-lead">
+          Combining each state's population with the national weekly-activity rate shows where
+          Australia's active people are concentrated — and why raw numbers can mislead.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Population is heavily skewed to the south-east</h3>
+          <div id="vis-statepop" class="vis"></div>
+          <p class="insight">
+            New South Wales and Victoria alone hold well over half of all Australians. Any
+            national count of "active people" will be dominated by these two states simply
+            because that is where most people live.
+          </p>
+        </div>
+        <div class="card">
+          <h3>So are the active millions — by sheer headcount</h3>
+          <div id="vis-stateactive" class="vis"></div>
+          <p class="insight">
+            Applying AusPlay's 66% weekly-active rate to each state's population estimates roughly
+            5.6&nbsp;million weekly-active people in NSW versus 168,000 in the NT. Big totals reflect
+            big populations — which is exactly why access is better judged <em>per person</em>.
+          </p>
+        </div>
+      </div>
+
+      <div class="card full">
+        <h3>Explore it yourself: click a state to compare</h3>
+        <div id="vis-linked" class="vis vis-wide"></div>
+        <p class="insight">
+          The map and ranking are linked. Click any state — on the map or the bar — to highlight it
+          in both views, and click empty space to reset. It makes the population-driven ordering of
+          "active headcount" tangible, and sets up the real question: is being active equally
+          <em>accessible</em> everywhere? For that we zoom into Victoria.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== CHAPTER 3 ===================== -->
+    <section class="chapter">
+      <div class="chapter-head">
+        <span class="chapter-num">03</span>
+        <h2>Victoria up close: access isn't equal</h2>
+        <p class="chapter-lead">
+          Zooming from the nation to Victoria's 79 local councils reveals that the places with the
+          most people are not the places with the best access to sport facilities.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Rural councils are best supplied per person</h3>
+          <div id="vis-vicchoro" class="vis"></div>
+          <p class="insight">
+            Measured as facilities per 1,000 residents, small rural shires such as Buloke, West
+            Wimmera and Yarriambiack top the state, while fast-growing outer-metro councils like
+            Melton, Wyndham and Casey sit near the bottom. Big populations dilute per-person access.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Does provision follow community need?</h3>
+          <div id="vis-vicsymbol" class="vis"></div>
+          <p class="insight">
+            Each circle is a council, sized by its total facilities and coloured by socio-economic
+            advantage (SEIFA). Use the legend to filter deciles and see whether facilities cluster
+            in advantaged or disadvantaged areas.
+            <span class="note">Renders once SEIFA decile and coordinates are added to <code>data/vic_lga.json</code>.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="card full">
+        <h3>Advantage vs. access, council by council</h3>
+        <div id="vis-vicscatter" class="vis"></div>
+        <p class="insight">
+          Each point is a council: its socio-economic advantage on the horizontal axis, its
+          facilities per 1,000 people on the vertical. The trend line summarises the relationship,
+          letting a general reader see at a glance whether wealthier areas enjoy more sport
+          infrastructure per person — without needing any statistics.
+          <span class="note">Renders once SEIFA decile is added to <code>data/vic_lga.json</code>.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== CHAPTER 4 ===================== -->
+    <section class="chapter">
+      <div class="chapter-head">
+        <span class="chapter-num">04</span>
+        <h2>Who keeps moving through life?</h2>
+        <p class="chapter-lead">
+          Meeting the physical activity guidelines — enough exercise for real health benefits —
+          depends a lot on age, sex and income.
+        </p>
+      </div>
+
+      <div class="card full">
+        <h3>A midlife dip, then a retirement rebound</h3>
+        <div id="vis-age" class="vis"></div>
+        <p class="insight">
+          The share of adults meeting the guidelines falls steadily from the late teens to a low
+          around 55–64, then jumps back up at 65+, when many Australians find time to walk, swim
+          and garden. The challenge years are the busy, time-poor middle decades.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Men edge out women on the guidelines</h3>
+          <div id="vis-sex" class="vis"></div>
+          <p class="insight">
+            About one in four men meet the guidelines, compared with one in five women. Preferences
+            differ too: AusPlay finds women lead in Pilates, yoga and walking, while men lead in
+            basketball, soccer and golf.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Sport still tracks the wallet</h3>
+          <div id="vis-income" class="vis"></div>
+          <p class="insight">
+            Participation climbs from 79% in lower-income households to 94% in the highest-earning
+            ones — a reminder that cost and time remain real barriers to an active life.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TAKEAWAY ===================== -->
+    <section class="takeaway">
+      <h2>So what?</h2>
+      <p>
+        Australia is active, but unevenly so. The activities that draw the biggest crowds are the
+        accessible ones; the active headcount follows population, but per-person access does not;
+        and staying active is hardest in busy midlife and in lower-income households. If the goal is
+        a genuinely sporting nation, the data points less at elite codes and more at
+        <strong>everyday access</strong> — local pools, paths and courts, close to where people
+        actually live.
+      </p>
+    </section>
+
+    <!-- ===================== METADATA / FOOTER ===================== -->
+    <footer class="meta">
+      <div class="meta-grid">
+        <div>
+          <h4>About this visualisation</h4>
+          <p><strong>Why.</strong> To help an everyday Australian understand how the nation really
+            plays sport — turning raw participation tables into a picture of who is active, where,
+            and how it changes with age and income.</p>
+          <p><strong>Who.</strong> A general Australian audience. Technical terms (SEIFA, "meeting
+            the guidelines") are introduced in plain language where they appear.</p>
+          <p><strong>What &amp; How.</strong> Twelve Vega-Lite visualisations — including five maps —
+            combining two data sources. Custom, derived elements include the estimated weekly-active
+            population (population × national activity rate), the linked map-and-bar, the per-capita
+            facility maps and the advantage-vs-access scatter.</p>
+        </div>
+        <div>
+          <h4>Data sources</h4>
+          <ul class="sources">
+            <li><strong>AusPlay</strong> — national sport &amp; physical activity participation,
+              Australian Sports Commission.
+              <a href="https://www.clearinghouseforsport.gov.au/research/ausplay/results">clearinghouseforsport.gov.au/research/ausplay/results</a>
+            </li>
+            <li><strong>ABS — National, state and territory population</strong>, June 2024.
+              <a href="https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/jun-2024">abs.gov.au</a>
+            </li>
+            <li><strong>ABS — Physical activity</strong> (National Health Survey, 2022).
+              <a href="https://www.abs.gov.au/statistics/health/health-conditions-and-risks/physical-activity/latest-release">abs.gov.au</a>
+            </li>
+            <li><strong>ABS — SEIFA 2021</strong> (Index of Relative Socio-economic Disadvantage),
+              used for the Victorian maps.
+              <a href="https://www.abs.gov.au/statistics/people/people-and-communities/socio-economic-indexes-areas-seifa-australia/latest-release">abs.gov.au</a>
+            </li>
+            <li><strong>State boundaries</strong> — rowanhogan/australian-states (GeoJSON).
+              <a href="https://github.com/rowanhogan/australian-states">github.com/rowanhogan/australian-states</a>
+            </li>
+            <li><strong>Victorian LGA boundaries</strong> — ABS ASGS 2023, simplified to TopoJSON.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="meta-foot">
+        <p><strong>Author:</strong> tluct404 &nbsp;·&nbsp; <strong>Created:</strong> May 2026 &nbsp;·&nbsp;
+          The JSON specification for every chart is in the <code>/specs</code> folder of this repository.</p>
+        <p class="ai-ack"><strong>Use of AI:</strong> Generative AI (Claude) was used to help write
+          and refine the Vega-Lite specifications, the page layout/CSS, and to check the grammar and
+          style of the narrative text. All data sourcing, chart design decisions and the analytical
+          story are the author's own. Data values were taken from the public sources listed above and
+          not generated by AI.</p>
+        <p class="verify-note">Note for the author before submitting: replace "tluct404" with your full
+          name, add your hand-drawn sketch PDF under <code>/sketch</code>, and confirm/cite the source of
+          the Victorian facilities dataset in <code>data/vic_lga.json</code>.</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="js/charts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Proportional-symbol map of the estimated number of weekly-active people per state/territory. This is a DERIVED measure combining two sources: each state's resident population (ABS, June 2024) multiplied by AusPlay's national weekly-activity rate of 66%. Circle area encodes magnitude; a light base map provides geographic context. It shows that active Australians are concentrated where people live (NSW, VIC, QLD), motivating the per-person access question explored for Victoria below. Sources: ABS ERP June 2024 + AusPlay (ASC); geometry: rowanhogan/australian-states.",
+  "width": "container",
+  "height": 360,
+  "config": {
+    "font": "Inter, sans-serif",
+    "view": { "stroke": null },
+    "legend": { "labelColor": "#46566b", "titleColor": "#46566b" }
+  },
+  "projection": {
+    "type": "conicEqualArea",
+    "rotate": [-134, 0],
+    "parallels": [-18, -36],
+    "center": [0, -27]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "geo/au-states.geojson",
+        "format": { "type": "json", "property": "features" }
+      },
+      "mark": { "type": "geoshape", "fill": "#eef1ee", "stroke": "#cdd6cf", "strokeWidth": 0.8 }
+    },
+    {
+      "data": { "url": "data/state_population.json" },
+      "mark": { "type": "circle", "color": "#2E8B57", "opacity": 0.8, "stroke": "#1F5F3A", "strokeWidth": 1 },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "size": {
+          "field": "est_active",
+          "type": "quantitative",
+          "title": "Est. weekly-active people",
+          "scale": { "range": [60, 3000] },
+          "legend": { "format": "~s" }
+        },
+        "tooltip": [
+          { "field": "state", "type": "nominal", "title": "State / Territory" },
+          { "field": "est_active", "type": "quantitative", "title": "Est. weekly-active people", "format": "," },
+          { "field": "population", "type": "quantitative", "title": "Residents", "format": "," }
+        ]
+      }
+    },
+    {
+      "data": { "url": "data/state_population.json" },
+      "mark": { "type": "text", "fontSize": 10, "fontWeight": 700, "color": "#21304a", "dy": 1 },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude": { "field": "lat", "type": "quantitative" },
+        "text": { "field": "abbr", "type": "nominal" }
+      }
+    }
+  ]
+}

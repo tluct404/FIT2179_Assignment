@@ -1,0 +1,53 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Lollipop chart of the ten most-played organised sports in Australia by adult participants. A lollipop is used instead of a full bar to keep a high data-ink ratio while still encoding magnitude by position/length along a common scale. Sorted by rank so the leader (Swimming) reads first. Source: AusPlay (Australian Sports Commission).",
+  "width": "container",
+  "height": 360,
+  "data": { "url": "data/top_sports.json" },
+  "config": {
+    "font": "Inter, sans-serif",
+    "axis": { "labelColor": "#46566b", "titleColor": "#46566b", "grid": false },
+    "view": { "stroke": null }
+  },
+  "transform": [
+    { "calculate": "datum.participants / 1000000", "as": "participants_m" }
+  ],
+  "encoding": {
+    "y": {
+      "field": "sport",
+      "type": "nominal",
+      "sort": { "field": "rank", "order": "ascending" },
+      "title": null,
+      "axis": { "labelFontWeight": 600, "labelFontSize": 12 }
+    },
+    "x": {
+      "field": "participants_m",
+      "type": "quantitative",
+      "title": "Adult participants (millions)",
+      "scale": { "domainMax": 3.9 },
+      "axis": { "tickCount": 4 }
+    }
+  },
+  "layer": [
+    {
+      "mark": { "type": "rule", "color": "#cdd6cf", "strokeWidth": 2 },
+      "encoding": { "x2": { "datum": 0 } }
+    },
+    {
+      "mark": { "type": "circle", "size": 230, "color": "#2E8B57", "opacity": 1 },
+      "encoding": {
+        "tooltip": [
+          { "field": "sport", "type": "nominal", "title": "Sport" },
+          { "field": "participants", "type": "quantitative", "title": "Participants", "format": "," },
+          { "field": "rank", "type": "ordinal", "title": "Rank" }
+        ]
+      }
+    },
+    {
+      "mark": { "type": "text", "align": "left", "dx": 12, "fontSize": 11, "color": "#46566b" },
+      "encoding": {
+        "text": { "field": "participants", "type": "quantitative", "format": "~s" }
+      }
+    }
+  ]
+}

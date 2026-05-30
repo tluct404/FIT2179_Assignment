@@ -1,0 +1,5 @@
+[
+  { "metric": "Active at least|once a year", "share": 84, "order": 1 },
+  { "metric": "Active at least|once a week", "share": 66, "order": 2 },
+  { "metric": "Active three or more|times a week", "share": 48, "order": 3 }
+]
