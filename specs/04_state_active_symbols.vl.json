@@ -6,7 +6,7 @@
   "config": {
     "font": "Archivo, sans-serif",
     "view": { "stroke": null },
-    "legend": { "labelColor": "#4a463c", "titleColor": "#4a463c" }
+    "legend": { "labelColor": "#4a463c", "titleColor": "#4a463c", "orient": "bottom", "direction": "horizontal", "titleLimit": 0 }
   },
   "projection": {
     "type": "conicEqualArea",
