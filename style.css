@@ -199,8 +199,8 @@ body {
 .map-callout {
   position: absolute;
   top: 30%;
-  left: 0;
-  max-width: 130px;
+  left: -44px;
+  max-width: 150px;
   pointer-events: none;
 }
 .map-callout-text {
@@ -217,9 +217,9 @@ body {
 }
 .map-callout-line {
   position: absolute;
-  left: 112px;
+  left: 154px;
   top: 16px;
-  width: 100px;
+  width: 110px;
   height: 0;
   border-top: 2px dashed var(--green-dark);
   transform-origin: left center;
