@@ -58,37 +58,6 @@ geo/LGA_2023_VIC_GDA2020.json   Victorian LGA boundaries (TopoJSON)
 sketch/                 Your hand-drawn sketch PDF goes here
 ```
 
-## Running locally
-
-Charts fetch JSON, which browsers block on `file://`. Serve over HTTP, e.g.:
-
-- **Windows (no Node/Python needed):** `powershell -ExecutionPolicy Bypass -File serve.ps1`, then open `http://localhost:8000`
-- **VS Code:** right-click `index.html` → *Open with Live Server*
-- any static server (`npx serve`, `python -m http.server`, etc.)
-
-(On GitHub Pages it just works.)
-
-## Deploy to GitHub Pages
-
-```bash
-git remote add origin https://github.com/tluct404/FIT2179_Assignment.git
-git push -u origin main
-```
-
-Then on GitHub: **Settings → Pages → Source: Deploy from a branch → `main` / root → Save.**
-The site appears at `https://tluct404.github.io/FIT2179_Assignment/` within a minute or two.
-
-## ✅ Before you submit
-
-- [x] **Victorian data filled.** `data/vic_lga.json` now includes `seifa_irsd_decile`, `lat` and `lon`,
-      so the VIC choropleth (06), bubble scatter (07) and beeswarm (08) all render.
-- [x] **Victorian facilities dataset cited** - Sport and Recreational Facilities List (Victorian
-      Government open data): https://discover.data.vic.gov.au/dataset/sport-and-recreational-facilities-list
-- [x] **Author named** - Timothy Lucas Tong (GitHub handle tluct404 kept in URLs).
-- [ ] **Add your hand-drawn sketch** as `sketch/sketch.pdf` (≥ 4 clearly labelled sections) and link
-      its GitHub URL on Moodle. *(The sketch is worth 2% and must be hand-drawn, not digital.)*
-- [ ] **Verify the live URL** loads, no chart 404s, and every `specs/*.json` is publicly browsable.
-- [ ] **(Recommended) Update figures to the AusPlay 2025 release** (published 30 Apr 2026) for "most recent data".
 
 ## Acknowledgement of AI use
 
