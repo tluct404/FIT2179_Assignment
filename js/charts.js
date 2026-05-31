@@ -8,7 +8,10 @@
 const embedOptions = {
   renderer: 'svg',
   actions: false,        // presentation, not an exploration tool
-  config: { background: null }
+  config: {
+    background: null,
+    axis: { labelFontWeight: 600 }  // bold axis labels consistently across every chart
+  }
 };
 
 // container id  ->  spec file  (distinct idioms; several custom-built)
