@@ -23,13 +23,28 @@
       }
     }
   ],
-  "mark": { "type": "geoshape", "stroke": "#ffffff", "strokeWidth": 0.5 },
+  "params": [
+    { "name": "hoverLGA", "select": { "type": "point", "on": "pointerover", "clear": "pointerout" } }
+  ],
+  "mark": { "type": "geoshape", "stroke": "#ffffff" },
   "encoding": {
     "color": {
       "field": "facilities_per_1k",
       "type": "quantitative",
       "title": "Facilities per 1,000 people",
       "scale": { "scheme": "greens" }
+    },
+    "opacity": {
+      "condition": { "param": "hoverLGA", "value": 1 },
+      "value": 0.4
+    },
+    "stroke": {
+      "condition": { "param": "hoverLGA", "empty": false, "value": "#143C28" },
+      "value": "#ffffff"
+    },
+    "strokeWidth": {
+      "condition": { "param": "hoverLGA", "empty": false, "value": 2 },
+      "value": 0.5
     },
     "tooltip": [
       { "field": "properties.LGA_NAME23", "type": "nominal", "title": "Council" },

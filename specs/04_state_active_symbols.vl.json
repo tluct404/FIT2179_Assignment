@@ -27,10 +27,21 @@
       "transform": [
         { "calculate": "datum.est_active >= 4000000 ? 'Over 4 million' : (datum.est_active >= 1000000 ? '1 to 4 million' : 'Under 1 million')", "as": "size_band" }
       ],
-      "mark": { "type": "circle", "color": "#2C7A52", "opacity": 0.8, "stroke": "#143C28", "strokeWidth": 1 },
+      "params": [
+        { "name": "hoverState", "select": { "type": "point", "on": "pointerover", "clear": "pointerout" } }
+      ],
+      "mark": { "type": "circle", "color": "#2C7A52", "stroke": "#143C28" },
       "encoding": {
         "longitude": { "field": "lon", "type": "quantitative" },
         "latitude": { "field": "lat", "type": "quantitative" },
+        "opacity": {
+          "condition": { "param": "hoverState", "value": 0.9 },
+          "value": 0.3
+        },
+        "strokeWidth": {
+          "condition": { "param": "hoverState", "empty": false, "value": 2.5 },
+          "value": 1
+        },
         "size": {
           "field": "size_band",
           "type": "ordinal",
